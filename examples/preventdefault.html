@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>prevent default example</title>
+  <style>
+    p {
+      font-size: 2em;
+    }
+  </style>
+</head>
+<body>
+  <p><a id="link1" href="http://google.com">Link 1</a></p>
+  <p><a id="link2" href="http://google.com">Link 2</a></p>
+
+  <script>
+    var followLink = document.getElementById('link1');
+    var preventLink = document.getElementById('link2');
+
+    followLink.onclick = function(event){
+      alert('LINK 1');
+    }
+    preventLink.onclick = function(event){
+      alert('LINK 2');
+      event.preventDefault();
+    }
+  </script>
+</body>
+</html>

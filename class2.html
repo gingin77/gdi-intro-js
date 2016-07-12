@@ -23,7 +23,7 @@
 		<!-- dark editor--><link rel="stylesheet" href="reveal/lib/css/dark.css">
 
 		<!-- If use the PDF print sheet so students can print slides-->
-		
+
 		<link rel="stylesheet" href="reveal/css/print/pdf.css" type="text/css" media="print">
 
 		<!--[if lt IE 9]>
@@ -38,97 +38,74 @@
 		<div class="slides">
         <!-- Opening slide -->
             <section>
-                <img src = "images/gdi_logo_badge.png">
+                <img src="images/gdi_logo_badge.png" alt="GDI logo" style="border: none; background: none; box-shadow: none">
                 <h3>JavaScript for Beginners</h3>
                 <h4>Class 2</h4>
             </section>
-        
-        <!-- Review -->
-        <section id="review">
+
+
             <section>
-                <h3>Let's Look Back</h3>
-                <img src="images/backwards-dance.jpg" alt="Woman looking backward as she dances"/>
-				<p class="credit">Photo credit: <a href="http://www.flickr.com/photos/zeepack/4398082292/" target="_blank">Deepak Bhatia</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></p>
-                
-            </section>
-            <section>
-                <h3>Code Search</h3>
+                <h3>Review</h3>
                 <p>In this code, spot the comments, variables, operator, function, argument, and return value.</p>
-                <pre><code>
-function calculateTip(total) {
+								<div data-height="410" data-theme-id="18963" data-slug-hash="f2d925c5959fe3f265e10e025a6c93f7" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>function calculateTip(total) {
     var tipPercent = 0.15; //Can be changed
     return (total * tipPercent);
 }
 
 var billPreTip = 10;
 var billTip   = calculateTip(billPreTip);
-var receipt   = 'Meal: ' + billPreTip + ' Tip: ' + billTip + 
-    ' Total: ' + (billPreTip + billTip);
-console.log(receipt); 
-				</code></pre>
+var receipt   = &#39;Meal: &#39; + billPreTip + &#39; Tip: &#39; + billTip + &#39; Total: &#39; + (billPreTip + billTip);
+
+var result = document.getElementById(&#39;tip&#39;);
+result.innerHTML = receipt;</code></pre>
+<p>See the Pen <a href='http://codepen.io/danlucas/pen/f2d925c5959fe3f265e10e025a6c93f7/'>Class 2 - Slide 1 - Review</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
             </section>
-        </section>
-        
-        <!-- Variable Scope -->
-        <section id="scope">
+
             <section>
                 <h3>Variable Scope</h3>
                 <p>The scope of a variable is how long the computer will remember it.</p>
-                <img src="images/footprints.jpg" alt="Footprints being washed away"/>
-				<p class="credit">Photo credit: <a href="http://www.flickr.com/photos/heyvikram/187950111/" target="_blank">_vikram</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></p>
-                
             </section>
             <section>
                 <h3>Global Scope</h3>
                 <p>A variable declared outside a function has a <span class="yellow">global</span> scope and can be accessed anywhere, even in a function.</p>
-                  <pre><code>
-var awesomeGroup = 'Girl Develop It'; //Global scope
-function whatIsAwesome() {
-    console.log (awesomeGroup + ' is pretty awesome.'); //Will work
-}
-whatIsAwesome();
+								<div data-height="305" data-theme-id="18963" data-slug-hash="bfe0ae9370ea1c35c9920f11e039478e" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var awesomeGroup = &#39;Girl Develop It&#39;; //Global scope
 
-				</code></pre>
-            </section>
-            <section>
-                <h3>Local Scope</h3>            
-                <p>A variable declared within a function has a <span class="yellow">local</span> scope and can only be accessed within that function.</p>
-                <pre><code>
 function whatIsAwesome() {
-    var awesomeGroup = 'Girl Develop It'; //Local scope
-    console.log ('I made a variable called awesomeGroup with a value of ' + awesomeGroup); //Will work
+  var awesome = document.getElementById(&#39;what-is-awesome&#39;);
+  awesome.innerHTML = awesomeGroup + &#39; is pretty awesome.&#39;; //Will work
 }
-whatIsAwesome();
-console.log (awesomeGroup + ' is pretty awesome.'); //Won't work
-				</code></pre>
+
+whatIsAwesome();</code></pre>
+<p>See the Pen <a href='http://codepen.io/danlucas/pen/bfe0ae9370ea1c35c9920f11e039478e/'>Class 2 - Slide 3 - Global Scope</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
             </section>
-        </section>
-        
-        <!-- Boolean -->
-        <section id="boolean">
             <section>
-                <h3>Boolean Variables</h3>
-                <img src="images/kitten-switch.jpg" alt="Kitten with light switch"/>
-				<p class="credit">Photo credit: <a href="http://www.flickr.com/photos/elycefeliz/5726163170/" target="_blank">elycefeliz</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></p>
+                <h3>Local Scope</h3>
+                <p>A variable declared within a function has a <span class="yellow">local</span> scope and can only be accessed within that function.</p>
+								<div data-height="360" data-theme-id="18963" data-slug-hash="cc37b30a07a52fb3c20608100db5cc5b" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var awesome = document.getElementById(&#39;what-is-awesome&#39;);
+
+function whatIsAwesome() {
+    var awesomeGroup = &#39;Girl Develop It&#39;; //Local scope
+    awesome.innerHTML = &#39;I made a variable called awesomeGroup with a value of &#39; + awesomeGroup; // Will work
+}
+
+whatIsAwesome();
+awesome.innerHTML = awesomeGroup + &#39; is pretty awesome.&#39;; // Won&#39;t work</code></pre>
+<p>See the Pen <a href='http://codepen.io/danlucas/pen/cc37b30a07a52fb3c20608100db5cc5b/'>Class 2 - Slide 4 - Local Scope</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
             </section>
+
             <section>
                 <h3>Boolean Variables</h3>
                 <p>Boolean variables represent the logical values True and False</p>
                 <pre><code>
 var catsAreBest = true;
 var dogsRule = false;
-				</code></pre>                
-                <p>If you try to use another variable as a boolean, JavaScript will guess. The number 0, the empty string '', undefined, and null are considered false, everything else reads as true.</p>
+				</code></pre>
+                <p>If you try to use another variable as a boolean, JavaScript will guess. The number 0, the empty string '  ', undefined, and null are considered false, everything else reads as true.</p>
             </section>
-        </section>
-        
-        <!--If/Then-->
-        <section id="if-then">
-            <section>
-                <h3>Control Flow</h3>
-                <img src="images/fork-path.jpg" alt="Forked path"/>
-				<p class="credit">Photo credit: <a href="http://www.flickr.com/photos/dennism2/1504087870/" target="_blank">DennisM2</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></p>
-            </section>
+
             <section>
                 <h3>The if statement</h3>
                 <p>Use if to decide which lines of code to execute, based on a condition.</p>
@@ -137,12 +114,14 @@ if (condition) {
   // statements to execute
 }
 				</code></pre>
-                <pre><code>
-var bananas = 5;
+				<div data-height="228" data-theme-id="18963" data-slug-hash="3eb93a1d1bb697673060404882a4db8a" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var bananas = 5;
+var gotBananas = document.getElementById(&#39;got-bananas&#39;);
+
 if (bananas &gt; 0) {
-  console.log ('You have some bananas!');
-}
-				</code></pre>
+  gotBananas.innerHTML = &#39;You have some bananas!&#39;;
+}</code></pre>
+<p>See the Pen <a href='http://codepen.io/danlucas/pen/3eb93a1d1bb697673060404882a4db8a/'>Class 2 - Slide 6 - The IF Statement</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
             </section>
             <section>
 				<h3>Comparison Operators</h3>
@@ -197,57 +176,49 @@ if (bananas &gt; 0) {
                        <td>Greater than or equal to </td>
                        <td><strong><code>TRUE</code></strong> if a is greater than or equal to b.</td>
                       </tr>
-                    </tbody>    
-                </table>          
+                    </tbody>
+                </table>
 			</section>
             <section>
                 <h3>Watch out!</h3>
                 <p>Don't mix up = and ==</p>
-                <img src="images/caution.jpg" alt="Caution Tape"/>
-				<p class="credit">Photo credit: <a href="http://www.flickr.com/photos/pictureperfectpose/76138988/" target="_blank">Eugene Zemlyanskiy</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></p>
             </section>
             <section>
 				<h3>Let's Develop It</h3>
-                <p>Make a variable called "temperature." Write some code that tells you to put on a coat if it is below 50 degrees.</p> 
+                <p>Make a variable called "temperature." Write some code that tells you to put on a coat if it is below 50 degrees.</p>
 			</section>
-        </section>
-        
-        <!--If/else -->
-        <section id="if-else">
-            <section>
-				<h3>Even more control flow</h3>
-				<img src="images/toomanysigns.jpg" alt="Sign post with multiple signs"/>
-				<p class="credit">Photo credit: <a href="http://www.flickr.com/photos/thomashawk/2402598275/" target="_blank">Thomas Hawk</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></p>
-			</section>
+
             <section>
                 <h3>The if/else statement</h3>
                 <p>Use else to provide an alternate set of instructions.</p>
-                <pre><code>
-var age = 28;
+								<div data-height="316" data-theme-id="18963" data-slug-hash="1650349a9ee58842aedf9f7cbd2856f3" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var age = 28;
+var canIDrive = document.getElementById(&#39;can-i-drive&#39;);
+
 if (age &gt;= 16) {
-    console.log ('Yay, you can drive!');
+    canIDrive.innerHTML = &#39;Yay, you can drive!&#39;;
 } else {
-    console.log ('Sorry, but you have ' + (16 - age) + 
-    ' years until you can drive.');
-}
-				</code></pre>
+    canIDrive.innerHTML = &#39;Sorry, but you have &#39; +
+      (16 - age) + &#39; years until you can drive.&#39;;
+}</code></pre>
+<p>See the Pen <a href='http://codepen.io/danlucas/pen/1650349a9ee58842aedf9f7cbd2856f3/'>Class 2 - Slide 10 - The If/Else Statement</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
             </section>
             <section>
                 <h3>The if/else if/else statement</h3>
                 <p>If you have multiple conditions, you can use else if.</p>
-                <pre><code>
-var age = 20;
+								<div data-height="428" data-theme-id="18963" data-slug-hash="35f4a573bb1dcd26173a0fdfd54b4c9b" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var age = 20;
+var canIVote = document.getElementById(&#39;can-i-vote&#39;);
 if (age &gt;= 35) {
-    console.log('You can vote AND hold any place in government!');
+   canIVote.innerHTML = &#39;You can vote AND hold any place in government!&#39;;
 } else if (age &gt;= 25) {
-    console.log('You can vote AND run for the Senate!');
+    canIVote.innerHTML = &#39;You can vote AND run for the Senate!&#39;;
 } else if (age &gt;= 18) {
-    console.log('You can vote!');
+    canIVote.innerHTML = &#39;You can vote!&#39;;
 } else {
-    console.log('You can\'t vote, but you can 
-    still write your representatives.');
-}
-				</code></pre>
+    canIVote.innerHTML = &#39;You can\&#39;t vote, but you can still write your representatives.&#39;;
+}</code></pre>
+<p>See the Pen <a href='http://codepen.io/danlucas/pen/35f4a573bb1dcd26173a0fdfd54b4c9b/'>Class 2 - Slide 11 - The If/Else If/Else Statement</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
             </section>
              <section>
 				<h3>Let's Develop It</h3>
@@ -275,6 +246,7 @@ if (age &gt;= 35) {
                        <td>And</td>
                        <td><strong><code>TRUE</code></strong> if both a and b are <strong><code>TRUE</code></strong>.</td>
                       </tr>
+                      <tr>
                       <td>a || b</td>
                        <td>Or</td>
                        <td><strong><code>TRUE</code></strong> if either a or b is <strong><code>TRUE</code></strong>.</td>
@@ -284,108 +256,108 @@ if (age &gt;= 35) {
                        <td>Not</td>
                        <td><strong><code>TRUE</code></strong> if a is not <strong><code>TRUE</code></strong>.</td>
                       </tr>
-                     </tbody>    
-                </table>          
+                     </tbody>
+                </table>
 			</section>
             <section>
                 <h3>Using logical operators</h3>
                 <p>You can use these operators to combine conditions.</p>
-                <pre><code>
-var bananas = 5;
+								<div data-height="285" data-theme-id="18963" data-slug-hash="ed8d21ef92f744aa79d633cf2d299b94" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var bananas = 5;
+var bananaSupply = document.getElementById(&#39;bananas&#39;);
 if (bananas &gt;=2 &amp;&amp; bananas &lt;7) {
-    console.log ('You have a reasonable number of bananas');
+    bananaSupply.innerHTML = &#39;You have a reasonable number of bananas&#39;;
 } else {
-    console.log ('Check your banana supply');
-}
-				</code></pre>
+     bananaSupply.innerHTML = &#39;Check your banana supply&#39;;
+}</code></pre>
+<p>See the Pen <a href='http://codepen.io/danlucas/pen/ed8d21ef92f744aa79d633cf2d299b94/'>Class 2 - Slide 14 - Using Logical Operators</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
             </section>
             <section>
 				<h3>Let's Develop It</h3>
-                <p>Add a logical operator to your what to wear program.</p> 
+                <p>Add a logical operator to your what to wear program.</p>
 			</section>
-        </section>
-         
-        <!-- Loops -->
-        <section id="loops">
-            <section>
-                <h3>Loops</h3>
-                <img src="images/hula-hoop.jpg" alt="Lego stormtrooper inside key ring"/>
-				<p class="credit">Photo credit: <a href="http://www.flickr.com/photos/steve_pires/8430087504/" target="_blank">Steve Pires</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></p>
-            </section>
+
             <section>
                 <h3>While loops</h3>
                 <p>While will repeat the same code over and over until some condition is met.</p>
-                <pre><code>
-var bottlesOfBeer = 99;
+								<div data-height="417" data-theme-id="18963" data-slug-hash="ae928eca3b3dd6e175b81abd48cdca3b" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var bottlesOfBeer = 99;
+var beersLeft = document.getElementById(&#39;beers-left&#39;);
+var p;
+
 while (bottlesOfBeer &gt;= 1) {
-    console.log (bottlesOfBeer + ' bottles of beer on the wall');
+    p = document.createElement(&quot;p&quot;);
+    p.innerHTML = bottlesOfBeer + &#39; bottles of beer on the wall&#39;;
+    beersLeft.appendChild(p);
     bottlesOfBeer = bottlesOfBeer - 9;
-}
-				</code></pre>
+}</code></pre>
+<p>See the Pen <a href='http://codepen.io/danlucas/pen/ae928eca3b3dd6e175b81abd48cdca3b/'>Class 2 - Slide 16 - While Loops</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
             </section>
             <section>
 				<h3>Infinite Loops</h3>
                 <p>Make sure something changes in the loop, or your loop will go on forever...</p>
-				<img src="images/infinite-loop.jpg" alt="Spiral that goes on toward infinity"/>
-				<p class="credit">Photo credit: <a href="http://www.flickr.com/photos/samueljohn/5348462863/" target="_blank">Samuel John</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></p>
+               <img src="images/infinite_loop.gif" style="height: 400px;"/>
 			</section>
             <section>
                 <h3>For loops</h3>
                 <p>For loops are very similar, but you declare a counter in the statement.</p>
-                <pre><code>
+								<div data-height="317" data-theme-id="18963" data-slug-hash="2123edeb2aa9add17715bb51b361f631" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var iteration = document.getElementById(&#39;iteration&#39;);
+var li;
+
 //will count 1 to 10
 for (var i = 1; i &lt;= 10; i++) {
-    console.log (i); 
-}
-				</code></pre>
+  li = document.createElement(&#39;li&#39;);
+  li.innerHTML = i;
+  iteration.appendChild(li);
+}</code></pre>
+<p>See the Pen <a href='http://codepen.io/danlucas/pen/2123edeb2aa9add17715bb51b361f631/'>Class 2 - Slide 18 - For Loops</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
             </section>
             <section>
                 <h3>Loops and logic</h3>
                 <p>You can add other statements or logical operators inside the loops.</p>
-                <pre><code>
+								<div data-height="424" data-theme-id="18963" data-slug-hash="392c50615b7d11f1218f3c8f2e168782" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var buzzBang = document.getElementById(&#39;buzz-bang&#39;);
+var li;
 //Count from 1 to 50
 for (var i = 1; i &lt;= 50; i++) {
-    console.log (i);       
-    //Says 'Buzz' after multiples of three
+    li = document.createElement(&#39;li&#39;);
+    li.innerHTML = i;
+    //Says &#39;Buzz&#39; after multiples of three
     if (i % 3 == 0) {
-        console.log (' Buzz');
-    }        
-    //Says 'Bang' after multiples of five
-    if (i % 5 == 0) {
-        console.log (' Bang');
+        li.innerHTML += &#39; Buzz&#39;;
     }
-}
-				</code></pre>
+    //Says &#39;Bang&#39; after multiples of five
+    if (i % 5 == 0) {
+        li.innerHTML += &#39; Bang&#39;;
+    }
+    buzzBang.appendChild(li);
+}</code></pre>
+<p>See the Pen <a href='http://codepen.io/danlucas/pen/392c50615b7d11f1218f3c8f2e168782/'>Class 2 - Slide 19 - Loops and Logic</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
             </section>
             <section>
                 <h3>Break</h3>
                 <p>To exit a loop, use the break statement.</p>
-                <pre><code>
-//Count from 100 to 200              
+								<div data-height="376" data-theme-id="18963" data-slug-hash="b04d334b175ef98bc015a10cd3588671" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var result = document.getElementById(&#39;result&#39;);
+
+//Count from 100 to 200
 for (var i = 100; i &lt;= 200; i++) {
-    console.log('Testing ' + i);
+    result.innerHTML = &#39;Testing &#39; + i;
     //Stop at the first multiple of 7
     if (i % 7 == 0) {
-        console.log('Found it! ' + i);
+        result.innerHTML = &#39;Found it! &#39; + i;
         break;
     }
-}
-				</code></pre>
+}</code></pre>
+<p>See the Pen <a href='http://codepen.io/danlucas/pen/b04d334b175ef98bc015a10cd3588671/'>Class 2 - Slide 20 - Break</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
             </section>
             <section>
 				<h3>Let's Develop It</h3>
                 <p>Write a loop that gives you the 9's times table,<br /> from 9 x 1 = 9 to 9 x 12 = 108.</p>
                 <p>Finish early? Try using a loop inside a loop to write all the times tables, from 1 to 12.</p>
 			</section>
-        </section>
-        
-        <!-- Arrays -->
-        <section id="arrays">
-            <section>
-                <h3>Arrays</h3>
-                <img src="images/kitten-group.jpg" alt="Group of kittens"/>
-				<p class="credit">Photo credit: <a href="http://www.flickr.com/photos/pasotraspaso/4444291348/" target="_blank">Jesus Solana</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></p>
-            </section>
+
             <section>
                 <h3>Arrays</h3>
                 <p>Arrays are ordered lists of values.</p>
@@ -394,7 +366,7 @@ var arrayName = [element0, element1, ...];
 				</code></pre>
                 <p>You can put different types of data into an array.</p>
                 <pre><code>
-var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 
+var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green',
 'Blue', 'Indigo', 'Violet'];
 var lotteryNumbers = [33, 72, 64, 18, 17, 85];
 var myFavoriteThings = ['Broccoli', 1024, 'Sherlock'];
@@ -403,85 +375,82 @@ var myFavoriteThings = ['Broccoli', 1024, 'Sherlock'];
             <section>
                 <h3>Array Length</h3>
                 <p>The length property tells you how many things are in an array</p>
-                <pre><code>
-var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 
-'Blue', 'Indigo', 'Violet'];
+								<div data-height="247" data-theme-id="18963" data-slug-hash="3c7e0f1feec80a59feda8caab26cd190" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var rainbowColors = [&#39;Red&#39;, &#39;Orange&#39;, &#39;Yellow&#39;, &#39;Green&#39;,
+&#39;Blue&#39;, &#39;Indigo&#39;, &#39;Violet&#39;];
 console.log(rainbowColors.length);
-				</code></pre>                
+
+var result = document.getElementById(&#39;result&#39;);
+result.innerHTML = rainbowColors.length;</code></pre>
+<p>See the Pen <a href='http://codepen.io/danlucas/pen/3c7e0f1feec80a59feda8caab26cd190/'>Class 2 - Slide 23 - Array Length</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
             </section>
             <section>
                 <h3>Using Arrays</h3>
                 <p>You can access items with "bracket notation" by using the position of the object you want. Programmers start counting at zero.</p>
-                <pre><code>
-var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 
-'Blue', 'Indigo', 'Violet'];
+								<div data-height="229" data-theme-id="18963" data-slug-hash="2272be7ca0f10fec9f04df870ff61723" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var rainbowColors = [&#39;Red&#39;, &#39;Orange&#39;, &#39;Yellow&#39;, &#39;Green&#39;,
+&#39;Blue&#39;, &#39;Indigo&#39;, &#39;Violet&#39;];
 var firstColor = rainbowColors[0];
 var lastColor = rainbowColors[6];
-				</code></pre>                
+
+document.getElementById(&#39;result&#39;).innerHTML = firstColor;</code></pre>
+<p>See the Pen <a href='http://codepen.io/danlucas/pen/2272be7ca0f10fec9f04df870ff61723/'>Class 2 - Slide 24 - Using Arrays</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
             </section>
             <section>
                 <h3>Changing arrays</h3>
                 <p>You can use bracket notation to change an item in an array</p>
-                <pre><code>
-var myFavoriteThings = ['Broccoli', 1024, 'Sherlock'];
-myFavoriteThings[0] = 'Asparagus';            
-                </code></pre>
+								<div data-height="275" data-theme-id="18963" data-slug-hash="ab631d59630d361fa8f7e6ef20c85b0b" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var myFavoriteThings = [&#39;Broccoli&#39;, 1024, &#39;Sherlock&#39;];
+document.getElementById(&#39;results&#39;).innerHTML = myFavoriteThings[0];
+
+myFavoriteThings[0] = &#39;Asparagus&#39;;
+document.getElementById(&#39;results&#39;).innerHTML = myFavoriteThings[0];</code></pre>
+<p>See the Pen <a href='http://codepen.io/danlucas/pen/ab631d59630d361fa8f7e6ef20c85b0b/'>Class 2 - Slide 25 - Changing Arrays</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
             </section>
             <section>
                 <h3>Expanding arrays</h3>
                 <p>Arrays do not have a fixed length. You can use "push" to add something to an array.</p>
                 <pre><code>
 var myFavoriteThings = ['Broccoli', 1024, 'Sherlock'];
-myFavoriteThings.push('Dancing');              
+myFavoriteThings.push('Dancing');
                 </code></pre>
             </section>
             <section>
 				<h3>Let's Develop It</h3>
-                <p>Create an array of your favorite foods. Echo a few values onto your screen.</p> 
+                <p>Create an array of your favorite foods. Echo a few values onto your screen.</p>
+                <p> Some things to try:
+                  <ul>
+                    <li>Log the second item in your array to the console.</li>
+                    <li>Find the length of your array.</li>
+                    <li>Add new items to your array.</li>
+                  </ul>
 			</section>
-        </section>
-        
-         <!-- Arrays and loops-->
-        <section id="arraysandloops">
-            <section>
-                <h3>Arrays + loops = BFF</h3>
-                <img src="images/holding-hands.jpg" alt="Couple holding hands"/>
-				<p class="credit">Photo credit: <a href="http://www.flickr.com/photos/mtsofan/8221708017/" target="_blank">John</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></p>
-            </section>
+
             <section>
                 <h3>Iterating through arrays</h3>
                 <p>Use a for loop to easily process each item in an array.</p>
-                <pre><code>
-var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet'];
+								<div data-height="263" data-theme-id="18963" data-slug-hash="8fe1917dae0ec0ea7134930d4ebd2855" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var rainbowColors = [&#39;Red&#39;, &#39;Orange&#39;, &#39;Yellow&#39;, &#39;Green&#39;, &#39;Blue&#39;, &#39;Indigo&#39;, &#39;Violet&#39;];
 for (var i = 0; i &lt; rainbowColors.length; i++) {
-  console.log(rainbowColors[i]);
-}              
-                </code></pre>
+  var li = document.createElement(&#39;li&#39;);
+  li.innerHTML = rainbowColors[i];
+  document.getElementById(&#39;result&#39;).appendChild(li);
+}</code></pre>
+<p>See the Pen <a href='http://codepen.io/danlucas/pen/8fe1917dae0ec0ea7134930d4ebd2855/'>Class 2 - Slide 28 - Iterating Through Arrays</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
             </section>
             <section>
 				<h3>Let's Develop It</h3>
-                <p>Use a loop to make a list of all your favorite foods.</p> 
-			</section>            
-        </section>
-       
-        
-        <!-- Final slides-->
-		<section id="final">
-			<section>
-				<h3>You did it!</h3>
-                <img src="images/kitten-yay.jpg" alt="Happy cat"/>
-				<p class="credit">Photo credit: <a href="http://www.flickr.com/photos/laura-kali/7399310732/" target="_blank">OnceAndFutureLaura</a> <a href="http://creativecommons.org/licenses/by-sa/2.0/" target="_blank">cc</a></p>
+                <p>Use a loop to make a list of all your favorite foods.</p>
 			</section>
-			
+
 			<section>
 				<h3>Resources</h3>
 					<ul>
 						<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank">JavaScript Guide</a>, from the Mozilla Developers Network.</li>
-						<li><a href="http://www.codecademy.com/tracks/javascript" target="_blank">Code Academy</a>, with interactive JavaScript lessons to help you review.</li>
+						<li><a href="http://www.codecademy.com/tracks/javascript" target="_blank">Codecademy</a>, with interactive JavaScript lessons to help you review.</li>
 					</ul>
 			</section>
-		</section>
- 
+
 			</div><!-- Close .slides -->
   		<footer>
         <div class="copyright">

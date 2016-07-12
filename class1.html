@@ -17,13 +17,14 @@
 		<link rel="stylesheet" href="reveal/css/reveal.css">
 		<link rel="stylesheet" href="reveal/css/theme/gdidefault.css" id="theme">
 		<link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" href="css/prism.css">
 
 		<!-- For syntax highlighting -->
 		<!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
 		<!-- dark editor--><link rel="stylesheet" href="reveal/lib/css/dark.css">
 
 		<!-- If use the PDF print sheet so students can print slides-->
-		
+
 		<link rel="stylesheet" href="reveal/css/print/pdf.css" type="text/css" media="print">
 
 		<!--[if lt IE 9]>
@@ -38,13 +39,12 @@
 		<div class="slides">
         <!-- Opening slide -->
             <section>
-                <img src = "images/gdi_logo_badge.png">
+                <img src="images/gdi_logo_badge.png" alt="GDI logo" style="border: none; background: none; box-shadow: none">
                 <h3>JavaScript for Beginners</h3>
                 <h4>Class 1</h4>
             </section>
-                
-        <!-- Welcome-->
-        <section id="welcome">
+
+
             <section>
               <h3>Welcome!</h3>
               <div class = "left-align">
@@ -58,55 +58,56 @@
               </ul>
               </div>
             </section>
-            
             <section>
               <h3>Welcome!</h3>
               <div class = "left-align">
               <p class = "blue">Tell us about yourself.</p>
               <ul>
                 <li>Who are you?</li>
+								<li>What are your preferred gender pronouns?</li>
                 <li>What do you hope to get out of the class?</li>
-                <li>What is your favorite children's book?</li>
+                <li>What is your favorite restaurant in the Triangle?</li>
               </ul>
               </div>
             </section>
-         </section>
-           
-         <!-- What is JavaScript-->
-         <section id="whatis">
             <section>
-                <h3>JavaScript is NOT Java</h3>
-                <img src="images/not-java.png" alt="Java logo with a no symbol"/>
+                <h3>Today's goals</h3>
+                    <ol>
+                     <li>Learn what JavaScript is and what it can do</li>
+                     <li>Learn what functions and variables are</li>
+                     <li>Write our first JavaScript code and make things happen!</li>
+            </section>
+            <section>
+            <h3>Hello, JavaScript!</h3>
+            <img src="images/oh_hai.jpg"/>
+            </section>
+            <section>
+            <h3>It's not Java</h3>
+                <img src="images/java_to_javascript.jpg" alt="Java is to JavaScript what ham is to hamster"/>
+
+            </section>
+            <section>
+                <h3>What is JavaScript?</h3>
+                    <p>JavaScript is a client-side programming language that adds interactivity to web pages. A browser reads the code and runs it directly.</p>
             </section>
             <section>
                 <h3>JavaScript is a client-side language</h3>
                 <img src="images/client-server.jpg" alt="Laptop and server connected via the internet"/>
 				<p class="credit">Photo credits: <a href="http://www.flickr.com/photos/papalars/5210226441/" target="_blank">Andrew E. Larson</a> and <a href="http://www.flickr.com/photos/johnseb/3425464/" target="_blank">John Seb Barber</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></p>
             </section>
-            <section>
-                <h3>JavaScript works with HTML and CSS</h3>
-                <img src="images/triangle.jpg" alt="Triangle"/>
-				<p class="credit">Photo credit: <a href="http://www.flickr.com/photos/ggunson/44539990/">Gillicious</a> <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">cc</a>
-            </section>
-            <section>
-                <h3>JavaScript lets you reuse code</h3>
-                <img src="images/desert-landscape.jpg" alt="Desert landscape"/>
-				<p class="credit">Photo credit: <a href="http://www.flickr.com/photos/philsnyder/4216356826/" target="_blank">Phil Synder</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></p>
-            </section>
-            <section>
-                <h3>What is JavaScript?</h3>
-                <ul>
-                    <li>JavaScript is standardized by the "ECMAScript" specifications.</li>
-                    <li>JavaScript is a client-side processing language. A browser reads the code and runs it directly.</li>
-                    <li>JavaScript interfaces with HTML and CSS.</li>
-                    <li>With JavaScript, you can write code once and use it everywhere. Remember, you want DRY code (Don't Repeat Yourself).</li>
-                    <li>JavaScript lets you build dynamic webpages that respond to input from users.</li>
-                </ul>
-            </section>
+			<section>
+				<h3>Why JavaScript?</h3>
+				<ul>
+					<li>JavaScript interacts with HTML and CSS.</li>
+					<li>With JavaScript, you can write code once and use it everywhere. DRY (Don't Repeat Yourself).</li>
+					<li>JavaScript lets you build dynamic webpages that respond to input from users.</li>
+                             <li>Animations, single page applications, and more!</li>
+				</ul>
+			</section>
             <section>
                 <h3>Let's Develop It</h3>
-                <p>Let's write your first JavaScript program. Make a folder called gdi. Inside, make a new page called index.html. Place this code inside.</p>
-                <pre><code>
+                <p>Let's write your first JavaScript program. Make a folder called GDI. Inside, make a new page called index.html. Place this code inside.</p>
+                <pre><code class="language-js">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
@@ -121,19 +122,14 @@
 &lt;/html&gt;
 				</code></pre>
             </section>
-        </section>
-        
-        <!-- Basics -->
-        <section id="basics">
             <section>
-				<h3>Computers need simple, clear instructions</h3>
-				<img src="images/confusedrobot.jpg" alt="Confused robot"/>
-				<p class="credit">Photo credit: <a href="http://www.flickr.com/photos/baboon/3946055/" target="_blank">baboon</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></p>
-			</section>
+                <h3>Let's Develop It</h3>
+                <p>Once you've copied that code, open index.html. It should open in a browser and run your code!</p>
+            </section>
             <section>
                 <h3>Script Tags</h3>
                 <p>You can mix JavaScript and HTML. The script tag tells your browser the stuff inside is code, not content.</p>
-                <pre><code>
+                <pre><code class="language-js">
 &lt;script&gt;
     CODE GOES HERE
 &lt;/script&gt;
@@ -141,46 +137,46 @@
             </section>
             <section>
                 <h3>JavaScript Files</h3>
-                <p>Just like CSS, you can split a long block of JavaScript into its own file. </p>
-                <pre><code>
+                <p>Just like CSS, you can split a long block of JavaScript into its own file and include it with an HTML tag. </p>
+                <pre><code class="language-js">
 &lt;script src="path/to/file.js"&gt;&lt;/script&gt;
 				</code></pre>
             </section>
             <section>
+                <h3>Some JavaScript things</h3>
+                <p>Let's go through some JavaScript concepts</p>
+            </section>
+            <section>
                 <h3>Separating Instructions</h3>
-                <p>After each individual statement, you must add a semicolon.</p>
-                <pre><code>
-&lt;script&gt;
+                <p>After each individual statement, it is reccomended (but not necessary!) add a semicolon.</p>
+                <pre><code class="language-js">
     console.log('Hello World!');
     console.log('I am glad to meet you');
     console.log('I am fuzzy');
-&lt;/script&gt;
 				</code></pre>
             </section>
             <section>
                 <h3>Comments</h3>
-                <p>You can leave comments in your code&mdash;notes that people can read and computers will ignore.</p>
-                <pre><code>
-&lt;script&gt;
-    /*I can wrap long comments 
-    with multiple lines 
+                <p>You can leave comments in your code. Comments are notes that people can read and computers will ignore.</p>
+                <pre><code class="language-js">
+    /*I can wrap long comments
+    with multiple lines
     like this*/
     console.log('Hello World!'); //Or mark short comments like this
-&lt;/script&gt;
 				</code></pre>
             </section>
             <section>
                 <h3>Getting results onto your screen</h3>
                 <p>Open a popup box.</p>
-                <pre><code>
+                <pre><code class="language-js">
 alert('Hello World!');
 				</code></pre>
                 <p>Display a message in your console.</p>
-                <pre><code>
+                <pre><code class="language-js">
 console.log('Hello World!');
 				</code></pre>
                 <p>Add something to the page.</p>
-                <pre><code>
+                <pre><code class="language-js">
 document.write('Hello World!');
 				</code></pre>
             </section>
@@ -192,19 +188,16 @@ document.write('Hello World!');
                     <li>Create a new file called mycode.js. Move your code to this file and link it to your page.</li>
                 </ul>
             </section>
-        </section>
-        <!-- Variables -->
-        <section>
+
             <section>
 				<h3>Variables</h3>
                 <p>A variable is a place to store values</p>
-				<img src="images/empty-glass.jpg" alt="Empty glass"/>
-				<p class="credit">Photo credit: <a href="http://www.flickr.com/photos/giuliag/3570562404/" target="_blank">giulia gasparro</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></p>
-			</section>
+                <img src="images/cats_in_box.gif"/>
+            </section>
             <section>
 				<h3>Variable Values</h3>
                 <ul>
-                    <li>When you first create a variable, it does not have a value (it is null).</li>
+                    <li>When you first create a variable, it does not have a value (it is undefined).</li>
                     <li>You can set a value for a variable.</li>
                     <li>Variables can hold different types of information, like words, numbers, and collections of data.</li>
                     <li>The value of a variable can change over time.</li>
@@ -222,67 +215,50 @@ document.write('Hello World!');
             <section>
 				<h3>Declaring a Variable</h3>
                 <p>To declare (create) a variable, just type the word "var" and the variable name.</p>
-                <pre><code>
-&lt;script&gt;
-    var numberOfKittens;
-&lt;/script&gt;
+                <pre><code class="language-js">
+var numberOfKittens;
 				</code></pre>
                 <p>It is a good idea to give your variable a starting value. This is called initializing the variable.</p>
-                <pre><code>
-&lt;script&gt;
-    var numberOfKittens = 5;
-&lt;/script&gt;
-				</code></pre> 
+                <pre><code class="language-js">
+var numberOfKittens = 5;
+				</code></pre>
 			</section>
             <section>
 				<h3>Using a Variable</h3>
                 <p>Once you have created a variable, you can use it in your code. Just type the name of the variable.</p>
-                <pre><code>
-&lt;script&gt;
-    var numberOfKittens = 5;
-    console.log (numberOfKittens);
-&lt;/script&gt;
+                <pre><code class="language-js">
+var numberOfKittens = 5;
+console.log(numberOfKittens);
 				</code></pre>
 			</section>
             <section>
 				<h3>Let's Develop It</h3>
-                <p>In your JS file, create a variable and give it a valid name and a value. Then, display the value.</p> 
+                <p>In your JS file (mycode.js), create a variable and give it a valid name and a value. Then, display the value (with an alert or a console.log.)</p>
 			</section>
-        </section>
-        <!-- Variable Types and Operators-->
-        <!-- Numbers-->
-        <section>
-            <section>
-				<h3>Numbers!</h3>
-				<img src="images/kitten-basket.jpg" alt="Cats in a basket"/>
-				<p class="credit">Photo credit: <a href="http://www.flickr.com/photos/tom-poes/2159348460/" target="_blank">WJ van den Eijkhof</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></p>
-			</section>
+
+
             <section>
 				<h3>Numbers</h3>
-                <p>Variable can be numbers, either integers or floats (decimals).</p>
-                <pre><code>
-&lt;script&gt;
+                <p>Variables can be numbers, either integers or floats (decimals).</p>
+                <pre><code class="language-js">
     var numberOfKittens = 5;
     var cutenessRating = 9.6;
-&lt;/script&gt;
 				</code></pre>
                 <p>The browser will automatically convert integers to floats if needed</p>
 			</section>
-            
+
             <section>
 				<h3>Arithmetic Operators</h3>
                 <p>Once you have numbers, you can do math with them!</p>
-                <pre><code>
-&lt;script&gt;
-    var numberOfKittens = 5;
-    var numberOfPuppies = 4;
-    var numberOfAnimals = numberOfKittens + numberOfPuppies;
-&lt;/script&gt;
+                <pre><code class="language-js">
+var numberOfKittens = 5;
+var numberOfPuppies = 4;
+var numberOfAnimals = numberOfKittens + numberOfPuppies;
 				</code></pre>
 			</section>
             <section>
 				<h3>Arithmetic Operators</h3>
-                <table>                
+                <table>
                     <thead>
                       <tr>
                        <th>Example</th>
@@ -321,170 +297,158 @@ document.write('Hello World!');
                        <td>Modulus</td>
                        <td>Remainder of a divided by b.</td>
                       </tr>
-                    </tbody>                
+                    </tbody>
                 </table>
 			</section>
             <section>
 				<h3>Let's Develop It</h3>
-                <p>Create two variables and try some arithmetic operators. Don't forget to display your results!</p> 
+                <p>Create two variables and try some arithmetic operators. Don't forget to display your results!</p>
 			</section>
-        </section>
-        <!-- Strings -->
-        <section>
+
             <section>
                 <h3>Strings</h3>
-                <p>Variable can be strings, groups of characters. You put your string in quotes.</p>
-                <pre><code>
-&lt;script&gt;
-    var kittensName = 'Fluffy';
-&lt;/script&gt;
+                <p>Variables can be strings. Strings are groups of characters. You put your string in quotes. In JavaScript you can use a single quote (') or a double quote (").</p>
+                <pre><code class="language-js">
+var kittensName = 'Fluffy';
 				</code></pre>
                 <p>If you want to use a quote in your string, you'll need to "escape" it with a backslash.</p>
-                <pre><code>
-&lt;script&gt;
-    console.log('I\'d like to use an apostrophe');
-&lt;/script&gt;
-				</code></pre>                
+                <pre><code class="language-js">
+console.log('I\'d like to use an apostrophe');
+// Or, just use a double quote for your string!
+console.log("I'd like to use an apostrophe");
+                </code></pre>
+                <pre><code class="language-js">
+				</code></pre>
             </section>
-            <section>
-				<h3>Playing with Strings</h3>
-				<img src="images/kitten-string.jpg" alt="Cat playing with string"/>
-				<p class="credit">Photo credit: <a href="http://www.flickr.com/photos/dirtbikedba/5796961878/" target="_blank">Mike Lawson</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></p>
-			</section>
+
             <section>
                 <h3>String Operators</h3>
                 <p>You can put strings together with a +, the concatenation operator.</p>
-                <pre><code>
-&lt;script&gt;
-    var kittensName = 'Fluffy ';
-    var fullName = kittensName + ' McDougle';
-    console.log(fullName); //Outputs 'Fluffy McDougle'
-&lt;/script&gt;
+                <pre><code class="language-js">
+var kittensName = 'Fluffy ';
+var fullName = kittensName + ' McDougle';
+console.log(fullName); //Outputs 'Fluffy McDougle'
 				</code></pre>
             </section>
             <section>
                 <h3>String Operators</h3>
                 <p>You can also use += to add things to the end of a string.</p>
-                <pre><code>
-&lt;script&gt;
-    var kittensName = 'Admiral ';
-    kittensName += ' Snuggles';
-    console.log(kittensName); //Outputs 'Admiral Snuggles'
-&lt;/script&gt;
+                <pre><code class="language-js">
+var kittensName = 'Admiral ';
+kittensName += ' Snuggles';
+console.log(kittensName); //Outputs 'Admiral Snuggles'
+// This code is equal to:
+kittensName = kittensName + ' Snuggles';
 				</code></pre>
             </section>
-            <section>
-				<h3>Concatenate!</h3>
-				<img src="images/concatenate.jpg" alt="Cat jumping on another cat."/>
-				<p class="credit">Photo credit: <a href="http://www.flickr.com/photos/furlined/8191032061/" target="_blank">Matt</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></p>
-			</section>
+
             <section>
 				<h3>Let's Develop It</h3>
-                <p>Create two variables, a first name and a last name, and then put them together to make a full name. Don't forget to display your results!</p> 
+                <p>Create two variables, a first name and a last name, and then put them together to make a full name. Don't forget to display your results!</p>
 			</section>
-        </section>
-        <!-- Functions -->
-        <section id="functions">
+
             <section>
                 <h3>Functions</h3>
-                <p>Functions are separable, reusable pieces of code. 
-                <img src="images/legos.jpg" alt="Pile of legos"/>
-				<p class="credit">Photo credit: <a href="http://www.flickr.com/photos/catzrule/9940388305/">Rick Payette</a> <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">cc</a>
+                <p>A function is a named part of a program that performs a specific task (a routine).</p>
+
             </section>
             <section>
                 <h3>Using Functions</h3>
                 <p>First, declare the function.</p>
-                <pre><code>
-&lt;script&gt;
-    function turtleFact() {
-        console.log('A turtle\'s lower shell is called a plastron.');
-    }
-&lt;/script&gt;
+                <pre><code class="language-js">
+function logTurtleFact() {
+    console.log('A turtle\'s lower shell is called a plastron.');
+}
 				</code></pre>
                 <p>Then, use it as many times as you want!</p>
-                <pre><code>
-&lt;script&gt;
-    turtleFact();
-&lt;/script&gt;
-				</code></pre>                
+                <pre><code class="language-js">
+logTurtleFact();
+				</code></pre>
             </section>
             <section>
                 <h3>Arguments</h3>
-                <p>Functions can accept input values, called arguments.</p>
-                <pre><code>
-&lt;script&gt;
-    function callKitten (kittenName){
-        console.log('Come here, ' + kittenName + '!');
-    }
-    callKitten ('Fluffy'); //outputs 'Come here, Fluffy!'
-    
-    function addNumbers(a, b) {
-        console.log(a + b);
-    }
-    addNumbers(5,7); //outputs 12
-    addNumbers(9,12); //outputs 21
-&lt;/script&gt;
-				</code></pre>             
+                <p>
+                    You can give functions specific values, referred to as
+                    arguments.
+                </p>
+                <pre><code class="language-js">
+function callKitten(kittenName){
+    console.log('Come here, ' + kittenName + '!');
+}
+callKitten('Fluffy'); //outputs 'Come here, Fluffy!'
+
+function addNumbers(a, b) {
+    console.log(a + b);
+}
+addNumbers(5,7); //outputs 12
+addNumbers(9,12); //outputs 21
+				</code></pre>
             </section>
             <section>
                 <h3>Arguments</h3>
-                <p>You can also pass variables into functions. These variables do not need to have the same name as the function arguments.</p>
-                <pre><code>
-&lt;script&gt;
-    function addOne(inputNumber){
-        var newNumber = inputNumber + 1;
-        console.log('&lt;p&gtYou now have ' + newNumber);
-    }
-    //Declare variables
-    var numberOfKittens = 5;
-    var numberOfPuppies = 4;
-    //Use them in functions
-    addOne(numberOfKittens);
-    addOne(numberOfPuppies);    
-&lt;/script&gt;
-				</code></pre>             
+                <p>
+                    A value you might give a function could be a variable.
+                    When the function receives these values, it can name them as it pleases.
+                    The variables passed to the function do not need to have the same name as the arguments.
+                </p>
+                <pre><code class="language-js">
+function addOne(inputNumber){
+    var newNumber = inputNumber + 1;
+    console.log('You now have ' + newNumber);
+}
+//Declare variables
+var numberOfKittens = 5;
+var numberOfPuppies = 4;
+//Use them in functions
+addOne(numberOfKittens);
+addOne(numberOfPuppies);
+				</code></pre>
             </section>
             <section>
 				<h3>Let's Develop It</h3>
-                <p>Turn the code you wrote to output someone's full name into a function, then use it.</p> 
+                <p>Turn the code you wrote to output someone's full name into a function. The function should accept 2 arguments: the first name, and the last name.</p>
+                <p>Don't forget to call the function with your own name!</p>
 			</section>
             <section>
                 <h3>Returning Values</h3>
                 <p>You can have a function give you back a value, to use later.</p>
-                <pre><code>
-&lt;script&gt;
-    function square(num) {
-        return num * num;
-    }
-    console.log(square(4));   // outputs '16'.
-    var squareOfFive = square(5); // will make squareOfFive equal 25.
-&lt;/script&gt;
+                <pre><code class="language-js">
+function square(num) {
+    return num * num;
+    // any code here won't run!
+}
+console.log(square(4));   // outputs '16'.
 				</code></pre>
-                <p>Return will immediately end a function.</p>
+                <p>A function will immediately exit on a 'return'</p>
+            </section>
+            <section>
+                <h3>Returning Values</h3>
+                <p>You can assign a variable the return value of a function!</p>
+                <pre><code class="language-js">
+function square(num) {
+    return num * num;
+    // any code here won't run!
+}
+var mySquare = square(4);
+console.log(mySquare); // outputs '16'.
+var squareOfFive = square(5); // will make squareOfFive equal 25.
+				</code></pre>
+                <p>A function will immediately exit on a 'return'</p>
             </section>
             <section>
 				<h3>Let's Develop It</h3>
-                <p>Add a return statement to your name function. Use that function to set the value of a variable.</p> 
+                <p>Add a return statement to your name function. Use that function to set the value of a variable.</p>
 			</section>
-        </section>
-        
-        <!-- Final slides-->
-		<section id="final">
-			<section>
-				<h3>You did it!</h3>
-				<img src="images/celebration.jpg" alt="People celebrating"/>
-				<p class="credit">Photo credit: <a href="http://www.flickr.com/photos/morphomir/2407451929/" target="_blank">Mircea</a> <a href="http://creativecommons.org/licenses/by-sa/2.0/" target="_blank">cc</a></p>
-			</section>
-			
+
 			<section>
 				<h3>Resources</h3>
 					<ul>
 						<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank">JavaScript Guide</a>, from the Mozilla Developers Network.</li>
-						<li><a href="http://www.codecademy.com/tracks/javascript" target="_blank">Code Academy</a>, with interactive JavaScript lessons to help you review.</li>
+						<li><a href="http://www.codecademy.com/tracks/javascript" target="_blank">Codecademy</a>, with interactive JavaScript lessons to help you review.</li>
 					</ul>
 			</section>
-		</section>
- 
+
+
 			</div><!-- Close .slides -->
   		<footer>
         <div class="copyright">
@@ -497,6 +461,7 @@ document.write('Hello World!');
 
 		<script src="reveal/lib/js/head.min.js"></script>
 		<script src="reveal/js/reveal.min.js"></script>
+        <script src="prism.js"></script>
 
 		<script>
 
@@ -516,7 +481,7 @@ document.write('Hello World!');
 					{ src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'reveal/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'prism.js', async: true, callback: function() { return Prism.highlightAll(true); } },
 					{ src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
