@@ -47,255 +47,265 @@
 			<section>
 				<h3>Events</h3>
 				<p>An 'event' is a type of object that is created when the user interacts with a web page.</p>
-                <p>For example, JS creates an event when a user clicks an element.</p>
-                <pre><code>
-element.onclick = function () {
-  //code to execute when the click happens
+                <p>For example, an event is emitted when a user <em>clicks</em> an element. That event is named "click"</p>
+                <pre><code class="language-js">
+
+function fireMissiles(event) {
+  // code to execute when the click happens
 };
+
+// first way to add an event handler
+element.onclick = fireMissiles;
+
+// second way to add event handler(s)
+element.addEventListener('click', fireMissiles, false);
 				</code></pre>
 			</section>
             <section>
 				<h3>Types of Events</h3>
-				<p>There are a <a href="http://www.w3schools.com/jsref/dom_obj_event.asp">variety of events</a>. Some of the most common:</p>
+				<p>There are a <a href="http://www.w3schools.com/jsref/dom_obj_event.asp"><em>tons</em> of events in javascript</a>. Some of the most common:</p>
                 <ul>
-                    <li>onclick: The event occurs when the user clicks on an element</li>
-                    <li>onmouseover: The event occurs when the pointer is moved onto an element</li>
-                    <li>onkeyup: The event occurs when the user releases a key</li>
-                    <li>onload: The event occurs when a document has been loaded</li>
-                    <li>onfocus: The event occurs when an element gets focus</li>
+                    <li>click</li>
+                    <li>mouseover</li>
+                    <li>keyup</li>
+                    <li>load</li>
+                    <li>focus</li>
                 </ul>
 			</section>
             <section>
                 <h3>Events and Code</h3>
-                <p>How do you make an event trigger some code?</p>
+                <p>How do you run some code when an event is emitted?</p>
                 <ol>
-                    <li>Break your code into functions</li>
-                    <li>Associate a function with a JavaScript event</li>
+                    <li>Create a function with the code you want to run</li>
+                    <li>Add an event listener and provide your function as the handler</li>
                 </ol>
 			</section>
             <section>
                 <h3>Calling Functions from HTML</h3>
-                <p>You can call a function directly from your HTML code:</p>
-			    <pre><code>
+                <p>As a shortcut, you can call a function directly from your HTML:</p>
+<div data-height="146" data-theme-id="18963" data-slug-hash="3385b60fe9d0f16dcac8a3543223f62c" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code class="language-js">
+function sayHi(){
+  alert(&#39;Hi!&#39;);
+}
+
+</code></pre>
+			    <pre><code class="language-js">
 &lt;button id="clickMe" onclick="sayHi()"&gt;Click Me!&lt;/button&gt;
 				</code></pre>
-				<div data-height="146" data-theme-id="18963" data-slug-hash="3385b60fe9d0f16dcac8a3543223f62c" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>function sayHi(){
-alert(&#39;Hi!&#39;);
-}</code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/3385b60fe9d0f16dcac8a3543223f62c/'>Class 4 - Slide 4 - Calling Functions from HTML</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+</div>
             </section>
             <section>
-                <h3>Listening Functions</h3>
-                <p>Listening functions work like many of the other things we have done. First, find the object:</p>
-                <pre><code>
-var myTarget = document.getElementById('clickMe');
-                </code></pre>
-                <p>Then add an event to that object:</p>
-								<div data-height="199" data-theme-id="18963" data-slug-hash="de87fd22f6e079361cfccc0871cf77a7" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var myTarget = document.getElementById(&#39;clickMe&#39;);
+                <h3>Event Listeners</h3>
+                <p>An event listener is a function that listens for an event. When that event is emitted, the function will be called automatically.</p>
+                <pre><code class="language-js">
+var myButton = document.getElementById('clickMeButton');
 
-myTarget.onclick = function(){
-  alert(&#39;Hi!&#39;);
-}</code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/de87fd22f6e079361cfccc0871cf77a7/'>Class 4 - Slide 5 - Calling Functions from HTML</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+myButton.onclick = function sayHi(event){
+  alert('Hi!');
+}
+
+</code></pre>
 			</section>
             <section>
 				<h3>Let's Develop It</h3>
                 <p>Download <a href="files/class4.zip">this week's sample code</a>.</p>
-                <p>Make some JavaScript code fire after an <code>onmouseover</code> event. Try adding the event to the HTML and adding a listening function.</p>
-
+                <p>
+                  When the user mouses over the turtle image, change the image
+                  to a placebear image (like https://placebear.com/500/400)
+                  (hint: the <code class="language-js">src</code> property holds the url for the image)
+                </p>
 			</section>
 
             <section>
-				<h3>Preventing Defaults</h3>
-				<p>Elements like buttons and links have default behaviors. However, the <code>event</code> objects has a built-in method to handle that:</p>
-                <pre><code>
-element.onclick = function (event) {
-  event.preventDefault();
+				<h3>Default Behavior</h3>
+				<p>
+        Certain events (like clicking links) have default behaviors.
+        The <code class="language-js">event</code> object has a built-in method to prevent that behavior:</p>
+                <pre><code class="language-js">
+var linkElement = document.getElementById('fakeLink');
+
+linkElement.onclick = function (event) {
+  // instead of navigating to the page that the link points to,
+  // this will do nothing
+  linkElement.preventDefault();
 };
 
 				</code></pre>
 			</section>
 
 			<section>
-				<h3>This</h3>
-				<p>The keyword <code>this</code> references the element that the user has just interacted with:</p>
-				<div data-height="404" data-theme-id="18963" data-slug-hash="14ecbe35c966f467640654de9282890b" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var mouseOverElem = document.getElementById(&#39;mouse-over-element&#39;);
-				var clickElem = document.getElementById(&#39;click-element&#39;);
+				<h3><em>this</em> in event handlers</h3>
+				<p>Inside of an event handler, the <code class="language-js">this</code> keyword (context) will
+        hold a reference to the element that the event emitted from:</p>
+				<div data-height="404" data-theme-id="18963" data-slug-hash="14ecbe35c966f467640654de9282890b" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code class="language-js">
 
-				mouseOverElem.onmouseover = function(event){
-				  console.log(this);
-				}
+var clickElem = document.getElementById(&#39;click-element&#39;);
 
-				clickElem.onclick = function(event){
-				  this.style.backgroundColor = &#39;red&#39;;
-				  this.innerHTML = &#39;I\&#39;ve been clicked&#39;;
-				}</code></pre>
-				<p>See the Pen <a href='http://codepen.io/danlucas/pen/14ecbe35c966f467640654de9282890b/'>Class 4 - Slide 8 - THIS</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-				</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+clickElem.onclick = function removeElement(event){
+  this.remove();
+}
+
+</code></pre>
 			</section>
             <section>
 				<h3>Let's Develop It</h3>
-                <p>Write code that targets this link:</p>
-                <pre><code>
+                <p>Using your class4 index.html and myscript.js,
+                create this link element</p>
+                <pre><code class="language-js">
 &lt;a href="http://girldevelopit.com/" id="gdiLink"&gt;Girl Develop It&lt;/a&gt;
 				</code></pre>
-                <p>When a user clicks the link, the page should display an error message instead of going to the Girl Develop It homepage.</p>
+        <p>And when the link is clicked, display an error message instead of allowing
+        the browser to go to the Girl Develop It homepage.</p>
 			</section>
 
 
 			<section>
                 <h3>Forms</h3>
-                <p>You can collect information from users to use in functions. The most common method is an HTML form:</p>
-								<div data-height="348" data-theme-id="18963" data-slug-hash="e231d4418e4fbc14edeec9d200ade40d" data-default-tab="html" data-user="danlucas" class='codepen'><pre><code>&lt;form id=&quot;temperatureForm&quot;&gt;
-    &lt;label for=&quot;temp&quot;&gt;Temperature:&lt;/label&gt; &lt;input type=&quot;text&quot; id=&quot;temp&quot; size=&quot;3&quot;/&gt; degrees in
-    &lt;input type=&quot;radio&quot; name=&quot;tempFormat&quot; value=&quot;F&quot; checked /&gt;Fahrenheit
-    &lt;input type=&quot;radio&quot; name=&quot;tempFormat&quot; value=&quot;C&quot; /&gt;Celsius &lt;br /&gt;
-    &lt;label for=&quot;submitButton&quot;&gt;&lt;/label&gt; &lt;input id=&quot;tempSubmitButton&quot; type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;
-&lt;/form&gt;</code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/e231d4418e4fbc14edeec9d200ade40d/'>Class 4 - Forms`</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+                <p>A form is an excellent way to collect data from a user:</p>
+<pre><code class="language-js">
+&lt;form id=&quot;temperatureForm&quot;&gt;
+  &lt;label for=&quot;temp&quot;&gt;Temperature:&lt;/label&gt; &lt;input type=&quot;text&quot; id=&quot;temp&quot; size=&quot;3&quot;/&gt; degrees in
+  &lt;input type=&quot;radio&quot; name=&quot;tempFormat&quot; value=&quot;F&quot; checked /&gt;Fahrenheit
+  &lt;input type=&quot;radio&quot; name=&quot;tempFormat&quot; value=&quot;C&quot; /&gt;Celsius &lt;br /&gt;
+  &lt;label for=&quot;submitButton&quot;&gt;&lt;/label&gt; &lt;input id=&quot;tempSubmitButton&quot; type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;
+&lt;/form&gt;
+
+</code></pre>
 			</section>
             <section>
                 <h3>Retrieving Form Data</h3>
-                <p>You retrieve the values of form elements using the <code>value</code> property:</p>
-								<div data-height="295" data-theme-id="18963" data-slug-hash="e231d4418e4fbc14edeec9d200ade40d" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var temperature = document.getElementById(&#39;temp&#39;).value;
-var tempSubmitButton = document.getElementById(&#39;tempSubmitButton&#39;);
+                <p>You retrieve the values of form elements using the <code class="language-js">value</code> property:</p>
+<pre><code class="language-js">
 
-tempSubmitButton.onclick = function(event){
+tempForm.onsubmit = function(event) {
   event.preventDefault();
-  writeToScreen(&#39;result&#39;, temperature);
+
+  var temperature = document.getElementById(&#39;temp&#39;).value;
+  // also try this.elements!
+
+  console.log(temperature);
 }
+
 </code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/e231d4418e4fbc14edeec9d200ade40d/'>Class 4 - Forms</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-                <p>You can retrieve the value of a form at any time. Try <code>onblur</code> (when a form element loses focus).</p>
+<small><a href='http://codepen.io/danlucas/pen/e231d4418e4fbc14edeec9d200ade40d/'>Class 4 - Forms</a> by danlucas</small>
 			</section>
             <section>
                 <h3>Radio Buttons</h3>
-                <p>Radio buttons usually do not have IDs, so you will need to use an array:</p>
-                <pre><code>
-var radios = document.getElementsByName('tempFormat');
+                <p>Radio buttons usually do not have IDs, so you will need find the one that is selected another way:</p>
+                <pre><code class="language-js">
 
-for (var i = 0, length = radios.length; i &lt; length; i++) {
-    if (radios[i].checked) {
-        var radioButtonValue = radios[i].value;
-        // only one radio can be checked, so stop now
-        break;
-    }
-}
+var scale =
+  document.querySelector('input[name="scale"]:checked').value;
+
 				</code></pre>
 			</section>
              <section>
-                <h3>Submit buttons</h3>
-                <p>If you are going to retrieve form values with the submit button, be sure to prevent the default action!</p>
-								<div data-height="295" data-theme-id="18963" data-slug-hash="e231d4418e4fbc14edeec9d200ade40d" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var temperature = document.getElementById(&#39;temp&#39;).value;
-var tempSubmitButton = document.getElementById(&#39;tempSubmitButton&#39;);
+                <h3>The Submit Event</h3>
+                <p>If you want to listen for a form <code class="language-js">submit</code> event, be sure to prevent the default behavior!</p>
+<pre><code class="language-js">
 
-tempSubmitButton.onclick = function(event){
+var tempForm = document.getElementById(&#39;tempForm&#39;);
+
+function logTemperature(event){
   event.preventDefault();
-  writeToScreen(&#39;result&#39;, temperature);
+  var temperature = document.getElementById(&#39;temp&#39;).value;
+  console.log(temperature);
 }
+
+tempForm.addEventListener('submit', logTemperature, false);
+
 </code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/e231d4418e4fbc14edeec9d200ade40d/'>Class 4 - Forms</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 			</section>
             <section>
 				<h3>Let's Develop It</h3>
-                <p>Collect a value from the input box on the page. Use it inside a function of some kind. For example, collect a number and multiply it by five or collect a name and display a greeting.</p>
+                <p>Using your class4 index.html and myscript.js,
+                collect a value from the input box on the page.
+                Write a function that takes the user input and writes it inside the #resultsBox div
+                </p>
 			</section>
 
             <section>
-				<h3>Timing Events</h3>
+				<h3>Timing Functions</h3>
 				<p>In JavaScript, it is possible to execute some code at specified time intervals.</p>
                 <ul>
-                    <li><code>setInterval()</code> executes a function over and over again, at specified time intervals</li>
-                    <li><code>setTimeout()</code>  executes a function, once, after waiting a specified number of milliseconds</li>
+                    <li><code class="language-js">setInterval()</code><br><br> executes a function over and over again, at specified time intervals</li>
+                    <br>
+                    <li><code class="language-js">setTimeout()</code> <br><br> executes a function, once, after waiting a specified number of milliseconds</li>
                 </ul>
 			</section>
             <section>
 				<h3>setInterval</h3>
-				<p>The syntax for <code>setInterval()</code> is:</p>
-                <pre><code>
+				<p>The function signature for <code class="language-js">setInterval</code> is:</p>
+                <pre><code class="language-js">
 setInterval(function, milliseconds);
 				</code></pre>
                 <p>For example, this is a simple clock:</p>
-								<div data-height="229" data-theme-id="18963" data-slug-hash="d6fef6d925bd2b551e125c3fb4b99ae6" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var simpleClock = setInterval(myClock, 1000);
-function myClock() {
-    var d = new Date();
-    var t = d.toLocaleTimeString();
-    document.getElementById(&#39;results&#39;).innerHTML = t;
-}</code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/d6fef6d925bd2b551e125c3fb4b99ae6/'>d6fef6d925bd2b551e125c3fb4b99ae6</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<pre><code class="language-js">
+var intervalId = setInterval(function() {
+    var currentTime = new Date();
+    var timeString = currentTime.toLocaleTimeString();
+    document.body.innerHTML = timeString;
+}, 1000);
+
+</code></pre>
 			</section>
             <section>
 				<h3>clearInterval</h3>
-				<p>You can use <code>clearInterval()</code> to stop a setInterval loop:</p>
-                <pre><code>
-clearInterval(intervalVariable)
+				<p>You can use <code class="language-js">clearInterval()</code> to stop a setInterval loop:</p>
+                <pre><code class="language-js">
+clearInterval(intervalId);
 				</code></pre>
-                <p>To stop our clock:</p>
-								<div data-height="274" data-theme-id="18963" data-slug-hash="7d086bfdf79f87b00ab151f3d78e356d" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var simpleClock = setInterval(myClock, 1000);
-
-document.getElementById(&#39;stop-clock&#39;).onclick = myStopFunction;
-
-function myStopFunction() {
-    clearInterval(simpleClock);
-}
-
-function myClock() {
-    var d = new Date();
-    var t = d.toLocaleTimeString();
-    document.getElementById(&#39;results&#39;).innerHTML = t;
-}</code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/7d086bfdf79f87b00ab151f3d78e356d/'>7d086bfdf79f87b00ab151f3d78e356d</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 			</section>
             <section>
 				<h3>setTimeout</h3>
-				<p>The method <code>setTimeout()</code> is similar, but it will only run once:</p>
-                <pre><code>
+				<p>The method <code class="language-js">setTimeout()</code> is similar, but it will only run once:</p>
+                <pre><code class="language-js">
 setTimeout(function, milliseconds);
 				</code></pre>
 			</section>
 			<section>
 				<h3>setTimeout</h3>
-                <p>For example, this code will wait 3 seconds, then create a popup box, unless the user triggers the <code>clearTimeout():</code></p>
-								<div data-height="361" data-theme-id="18963" data-slug-hash="EVZybx" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var helloBox;
-function sayHello() {
-    helloBox = setTimeout(function(){alert(&#39;Hello&#39;)},3000);
-}
-function dontSayIt() {
-    clearTimeout(helloBox);
+                <p>For example, this code will wait 3 seconds, then create a popup box, unless the user triggers the <code class="language-js">clearTimeout():</code></p>
+<pre><code class="language-js">
+var timeoutId = setTimeout(function() {
+  alert(&#39;Hello&#39;);
+}, 3000);
+
+document.body.onclick = function cancelHello(event) {
+  clearTimeout(timeoutId);
 }
 
-sayHello();
 </code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/EVZybx/'>EVZybx</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 			</section>
             <section>
 				<h3>Animations</h3>
 				<p>By changing values slowly over time, we can create simple animations:</p>
-				<div data-height="448" data-theme-id="18963" data-slug-hash="b784f2e4477781340d1d790fe0ce8d95" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var targetPic = document.getElementById(&#39;turtlePic&#39;);
+<pre><code class="language-js">
+var targetPic = document.getElementById(&#39;turtlePic&#39;);
+
 targetPic.onclick = function () {
-var leftMarginValue = 0;
-function increaseMargin() {
-leftMarginValue++  // update parameter each time
-targetPic.style.marginLeft = leftMarginValue + &#39;px&#39; //set left margin
-if (leftMarginValue === 200)  // check finish condition {
-		clearInterval(movePic);
+  var leftMarginValue = 0;
+  // increase every 10ms
+  var intervalId = setInterval(function moveImage() {
+    // increase margin every time
+    leftMarginValue++;
+    // set new left margin
+    targetPic.style.marginLeft = leftMarginValue + &#39;px&#39;
+    // are we done?
+    if (leftMarginValue === 200) {
+      clearInterval(intervalId);
+    }
+  }, 10);
 }
-var movePic = setInterval(function(){increaseMargin()}, 10) // update every 10ms
-}</code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/b784f2e4477781340d1d790fe0ce8d95/'>b784f2e4477781340d1d790fe0ce8d95</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+</code></pre>
+<small><a href='http://codepen.io/danlucas/pen/b784f2e4477781340d1d790fe0ce8d95/'>b784f2e4477781340d1d790fe0ce8d95</a> by danlucas</small>
 			</section>
             <section>
 				<h3>Let's Develop It</h3>
-                <p>Using the function from the previous slide as a base, try changing some animation parameters. What happens?</p>
+                <p>Using the function from the previous slide as a base, try animating some other style parameters.</p>
+                <br>
+                <iframe src="https://giphy.com/embed/l41lNRz0uXPQLm0RG" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 			</section>
 
 			<section>
