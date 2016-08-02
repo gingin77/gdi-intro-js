@@ -127,7 +127,7 @@ var linkElement = document.getElementById('fakeLink');
 linkElement.onclick = function (event) {
   // instead of navigating to the page that the link points to,
   // this will do nothing
-  linkElement.preventDefault();
+  event.preventDefault();
 };
 
 				</code></pre>
