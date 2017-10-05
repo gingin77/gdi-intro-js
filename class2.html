@@ -41,30 +41,36 @@
                 <img src="images/gdi_logo_badge.png" alt="GDI logo" style="border: none; background: none; box-shadow: none">
                 <h3>JavaScript for Beginners</h3>
                 <h4>Class 2</h4>
+                <p>Welcome back! So happy to see you.</p>
             </section>
-
-
+            <section>
+                <h3>Today's goals</h3>
+                    <ol>
+                     <li>Learn about scope</li>
+                     <li>What are booleans?</li>
+                     <li>Comparison and logical operators!</li>
+                     <li>if / else / else if statements</li>
+                     <li>while and for loops</li>
+                     <li>Arrays!</li>
+            </section>
             <section>
                 <h3>Review</h3>
                 <p>In this code, spot the comments, variables, operator, function, argument, and return value.</p>
-								<div data-height="410" data-theme-id="18963" data-slug-hash="f2d925c5959fe3f265e10e025a6c93f7" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code class="language-js">function calculateTip(total) {
+                <pre style="width:1100px;"><code class="language-js">
+function calculateTip(total) {
     var tipPercent = 0.15; //Can be changed
     return (total * tipPercent);
 }
 
 var billPreTip = 10;
-var billTip   = calculateTip(billPreTip);
-var receipt   = 'Meal: ' + billPreTip + ' Tip: ' + billTip + ' Total: ' + (billPreTip + billTip);
-
-var result = document.getElementById('tip');
-result.innerHTML = receipt;</code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/f2d925c5959fe3f265e10e025a6c93f7/'>Class 2 - Slide 1 - Review</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+var billTip  = calculateTip(billPreTip);
+var receipt  = 'Meal: ' + billPreTip + ' Tip: ' + billTip + ' Total: ' + (billPreTip + billTip);
+                </code></pre>
             </section>
 
             <section>
                 <h3>Scope</h3>
-                <p>Scope is the concept of what's visible and invisible at certain parts of the program—what the program can see (variables, functions). It's all about visibility. </p>
+                <p>Scope is the concept of what's visible and invisible at certain parts of the program—what the program can see and has access to (variables, functions). It's all about visibility. </p>
             </section>
             <section>
                 <h3>Global Scope</h3>
@@ -81,8 +87,8 @@ result.innerHTML = receipt;</code></pre>
                 <h3>Boolean Variables</h3>
                 <p>Boolean variables represent the logical values True and False</p>
                 <pre><code class="language-js">
-var customerHasPaid = true;
-var showVideo = false;
+    var customerHasPaid = true;
+    var showVideo = false;
 				</code></pre>
                 <p>If you try to use another variable as a boolean, JavaScript will guess. The number 0, the empty string '  ', undefined, and null are considered false, everything else is "truthy".</p>
             </section>
@@ -91,12 +97,18 @@ var showVideo = false;
                 <h3>The if statement</h3>
                 <p>Use if to decide which lines of code to execute, based on a condition.</p>
                 <pre><code class="language-js">
-if (expression) {
-  // if the expression is truthy,
-  // the code inside these brackets will run!
-}
+    if (expression) {
+    // if the expression is truthy,
+    // the code inside these brackets will run!
+    }
 				</code></pre>
-<iframe height='265' scrolling='no' src='https://codepen.io/jbielick/embed/kXZvdZ/?height=265&theme-id=dark&default-tab=js&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/jbielick/pen/kXZvdZ/'>kXZvdZ</a> by Josh Bielick (<a href='http://codepen.io/jbielick'>@jbielick</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+                <pre style="width:1000px;"><code class="language-js">
+    var accountBalance = 7800;
+
+    if (accountBalance > 0) {
+        document.write('Your current balance is: $' + accountBalance / 100);
+    }
+				</code></pre>
             </section>
             <section>
 				<h3>Comparison Operators</h3>
@@ -160,18 +172,38 @@ if (expression) {
             </section>
             <section>
 				<h3>Let's Develop It</h3>
-                <p>Make a variable called "temperature." Write some code that tells you to put on a coat if it is below 50 degrees.</p>
+                <p>Make a variable called "temperature". Write some code that tells you to put on a coat if it is below 50 degrees.</p>
 			</section>
 
             <section>
                 <h3>The if/else statement</h3>
                 <p>Use else to provide an alternate set of instructions.</p>
-								<iframe height='265' scrolling='no' src='https://codepen.io/jbielick/embed/wWypVz/?height=265&theme-id=dark&default-tab=js&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/jbielick/pen/wWypVz/'>wWypVz</a> by Josh Bielick (<a href='http://codepen.io/jbielick'>@jbielick</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+                <pre style="width:1000px;"><code class="language-js">
+var age = prompt('What is your age?', 16);
+
+if (age >= 16) {
+    document.write('Yay, you can drive!');
+} else {
+    document.write('Sorry, but you have ' + (16 - age) + ' years until you can drive.');
+}
+				</code></pre>
             </section>
             <section>
                 <h3>The if/else if/else statement</h3>
                 <p>If you have multiple conditions, you can use else if.</p>
-                <iframe height='265' scrolling='no' src='https://codepen.io/jbielick/embed/LkQZwv/?height=265&theme-id=dark&default-tab=js&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/jbielick/pen/LkQZwv/'>LkQZwv</a> by Josh Bielick (<a href='http://codepen.io/jbielick'>@jbielick</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+                <pre style="width:1000px;"><code class="language-js">
+var age = 20;
+
+if (age >= 35) {
+  document.write('You can vote AND hold any place in government!');
+} else if (age >= 25) {
+   document.write('You can vote AND run for the Senate!');
+} else if (age >= 18) {
+   document.write('You can vote!');
+} else {
+   document.write('You can\'t vote, but you can still write your representatives.');
+}
+				</code></pre>
             </section>
              <section>
 				<h3>Let's Develop It</h3>
@@ -215,17 +247,34 @@ if (expression) {
             <section>
                 <h3>Using logical operators</h3>
                 <p>You can use these operators to combine conditions.</p>
-								<iframe height='265' scrolling='no' src='https://codepen.io/jbielick/embed/pbaazd/?height=265&theme-id=dark&default-tab=js&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/jbielick/pen/wWypVz/'>wWypVz</a> by Josh Bielick (<a href='http://codepen.io/jbielick'>@jbielick</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+
+                <pre style="width:1000px;"><code class="language-js">
+var amountDue = 12000;
+
+if (amountDue > 0 && amountDue <= 10000) {
+    document.write('You owe ' + amountDue);
+} else {
+    document.write('Your account is delinquent. Please pay $' + amountDue / 100);
+}
+				</code></pre>
             </section>
             <section>
 				<h3>Let's Develop It</h3>
-                <p>Add a logical operator to your what to wear program.</p>
+                <p>Refactor (update your code) to add a logical operator to your what to wear program.</p>
 			</section>
 
             <section>
                 <h3>While loops</h3>
                 <p>The <em>while</em> loop will repeat the same code over and over until a predefined condition is satisfied.</p>
-								<iframe height='265' scrolling='no' src='https://codepen.io/jbielick/embed/yJvvLp/?height=265&theme-id=dark&default-tab=js&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/jbielick/pen/LkQZwv/'>LkQZwv</a> by Josh Bielick (<a href='http://codepen.io/jbielick'>@jbielick</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+
+                <pre style="width:1000px;"><code class="language-js">
+var beersLeft = 99;
+
+while (beersLeft > 1) {
+    document.write(beersLeft + ' bottles of beer on the wall');
+    beersLeft -= 1;
+}
+				</code></pre>
             </section>
             <section>
 				<h3>Infinite Loops</h3>
@@ -235,18 +284,34 @@ if (expression) {
             <section>
                 <h3>For loops</h3>
                 <p>For loops are very similar, but you declare a counter in the statement.</p>
-								<pre><code class="language-js">
-//will count 1 to 10
-for (var i = 1; i <= 10; i++) {
-  document.write(i);
-}
-
+<pre><code class="language-js">
+    //will count 1 to 10
+    for (var i = 1; i <= 10; i++) {
+    document.write(i);
+    }
 </code></pre>
             </section>
             <section>
                 <h3>Loops and logic</h3>
                 <p>You can add other statements or logical operators inside the loops.</p>
-								<iframe height='360' scrolling='no' src='https://codepen.io/jbielick/embed/grvvbP/?height=360&theme-id=dark&default-tab=js&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/jbielick/pen/wWypVz/'>wWypVz</a> by Josh Bielick (<a href='http://codepen.io/jbielick'>@jbielick</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+<pre><code class="language-js">
+    //Count from 1 to 50
+    for (var i = 1; i <= 50; i++) {
+    document.write(i);
+
+    // say "fizz" if i is a multiple of three
+    if (i % 3 === 0) {
+    document.write(' fizz');
+    }
+
+    // say "buzz" if i is a multiple of three
+    if (i % 5 === 0) {
+    document.write(' buzz');
+    }
+
+    document.write('&lt;br&gt');
+    }
+</code></pre>
             </section>
             <section>
                 <h3>Break</h3>
@@ -295,14 +360,14 @@ var myTodoLists = [
                 <p>The length property tells you how many items are in an array</p>
 								<pre><code class="language-js">
 var tags = ['#javascript', '#hacker', '#gdirdu'];
-console.log(tags.length);
+console.log(tags.length); // 3
 
 </code></pre>
             </section>
             <section>
                 <h3>Using Arrays</h3>
-                <p>You can access items with "bracket notation" by using the position of the object you want. Programmers start counting at zero.</p>
-								<pre><code class="language-js">
+                <p>You can access items with "bracket notation" by using the position of the item you want. Programmers start counting at zero.</p>
+								<pre style="width:1000px;"><code class="language-js">
 var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet'];
 var firstColor = rainbowColors[0];
 var lastColor = rainbowColors[6];
@@ -326,7 +391,7 @@ logFirstFavorite();
 
 myFavoriteThings[0] = 'Garlic Roasted Brussel Sprouts';
 
-logFirstFavorite();
+logFirstFavorite(); // 'Garlic Roasted Brussel Sprouts'
 
 </code></pre>
             </section>
@@ -342,7 +407,7 @@ console.log(myFavoriteThings);
             </section>
             <section>
 				<h3>Let's Develop It</h3>
-                <p>Create an array of your favorite foods. Echo a few values onto your screen.</p>
+                <p>Create an array of your favorite foods. Put a few values onto your screen.</p>
                 <p>Some things to try:
                   <ul>
                     <li>Log the second item in your array to the console.</li>
@@ -355,7 +420,7 @@ console.log(myFavoriteThings);
                 <h3>Iterating through arrays</h3>
                 <p>Use a for loop to easily do something with each item in an array.</p>
 								<div data-height="263" data-theme-id="18963" data-slug-hash="8fe1917dae0ec0ea7134930d4ebd2855" data-default-tab="js" data-user="danlucas" class='codepen'>
-                <pre><code class="language-js">
+                <pre style="width:1000px;"><code class="language-js">
 var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet'];
 
 // loop as many times as items we have
