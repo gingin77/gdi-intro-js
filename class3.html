@@ -41,121 +41,130 @@
                 <h3>JavaScript for Beginners</h3>
                 <h4>Class 3</h4>
             </section>
-
-
+            <section>
+                <h3>Today's goals</h3>
+                    <ol>
+                     <li>Objects</li>
+                     <li>Review: Anatomy of a website</li>
+                     <li>Accessing the DOM with JavaScript!</li>
+                     <li>Syling with JavaScript!</li>
+                     <li>DOM innerHTML</li>
+                     <li>Creating new nodes</li>
+            </section>
             <section>
 			  <h3>Objects</h3>
 			  <p>Objects let us store a collection of properties.</p>
               <pre><code>
 var objectName = {
   propertyName: propertyValue,
-  propertyName: propertyValue,
+  propertyName2: propertyValue,
   ...
 };
 			  </code></pre>
               <pre><code>
 var aboutMe = {
-  hometown: 'Atlanta, GA',
-  hair: 'Auburn',
-  likes: ['knitting', 'code'],
-  birthday: {month: 10, day: 17}
+  hometown: 'Blacksburg, VA',
+  hair: 'Brown',
+  likes: ['dogs', 'code'],
+  birthday: {month: 3, day: 17}
 };
 			  </code></pre>
 			</section>
-            <section>
+      <section>
 			  <h3>Accessing Objects</h3>
 			  <p>You can retrieve values using "dot notation"</p>
-				<div data-height="279" data-theme-id="18963" data-slug-hash="966a918f5fab8a3ed5242bf2614c1cef" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var aboutMe = {
-hometown: &#39;Atlanta, GA&#39;,
-hair: &#39;Auburn&#39;
+<pre><code>
+var aboutMe = {
+  hometown: &#39;Blacksburg, VA&#39;,
+  hair: &#39;Brown&#39;
 };
 var myHometown = aboutMe.hometown;
 
-writeToScreen(&#39;result&#39;, myHometown);</code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/966a918f5fab8a3ed5242bf2614c1cef/'>Class 3 - Slide 2 - Accessing Objects</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+document.write(myHometown);
+</code></pre>
 			</section>
 			<section>
 	<h3>Accessing Objects</h3>
 	<p>Or using "bracket notation" (like arrays)</p>
-	<div data-height="268" data-theme-id="18963" data-slug-hash="7685af0b90778226d9b2cdbc558e1c17" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var aboutMe = {
-  hometown: &#39;Atlanta, GA&#39;,
-  hair: &#39;Auburn&#39;
+<pre><code>
+var aboutMe = {
+  hometown: &#39;Blacksburg, VA&#39;,
+  hair: &#39;Brown&#39;
 };
 var myHair = aboutMe[&#39;hair&#39;];
 
-writeToScreen(&#39;result&#39;, myHair);</code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/7685af0b90778226d9b2cdbc558e1c17/'>Class 3 - Slide 3 - Accessing Objects</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+document.write(myHair);
+</code></pre>
 </section>
-            <section>
+<section>
 			  <h3>Changing Objects</h3>
 			  <p>You can use dot or bracket notation to change properties</p>
-				<div data-height="268" data-theme-id="18963" data-slug-hash="2862f2d6bdcb7afdc89a23008594093d" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var aboutMe = {
-  hometown: &#39;Atlanta, GA&#39;,
-  hair: &#39;Auburn&#39;
+<pre><code>
+var aboutMe = {
+  hometown: &#39;Blacksburg, VA&#39;,
+  hair: &#39;Brown&#39;
 };
 
-aboutMe.hair = &#39;blue&#39;;
+aboutMe.hometown = &#39;Durham, NC&#39;;
+aboutMe['hair'] = &#39;blue&#39;;
 
-
-writeToScreen(&#39;result&#39;, aboutMe.hair);</code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/2862f2d6bdcb7afdc89a23008594093d/'>Class 3 - Slide 4 - Accessing Objects</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+console.log(aboutMe.hometown); // Durham, NC
+console.log(aboutMe.hair); // blue
+</code></pre>
 			</section>
 			<section>
 					<h3>Changing Objects</h3>
           <p>Add new properties</p>
-					<div data-height="103" data-theme-id="18963" data-slug-hash="b10bb2445b01c3c7eb5ffdabd633d02b" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>aboutMe.gender = &#39;female&#39;
+<pre><code>
+aboutMe.favoriteAnimal = &#39;dog&#39;;
 
-
-writeToScreen(&#39;result&#39;, aboutMe.gender);</code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/b10bb2445b01c3c7eb5ffdabd633d02b/'>Class 3 - Slide 5 - Accessing Objects</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+console.log(aboutMe.favoriteAnimal); // dog</code></pre>
               <p>Or delete them</p>
-							<div data-height="140" data-theme-id="18963" data-slug-hash="215205862cd5637f8805603413964fb4" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>aboutMe.gender = &#39;female&#39;
-delete aboutMe.gender;
-
-writeToScreen(&#39;result&#39;, aboutMe.gender);</code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/215205862cd5637f8805603413964fb4/'>Class 3 - Slide 5 - Accessing Objects</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<pre><code>
+delete aboutMe.favoriteAnimal;
+console.log(aboutMe.favoriteAnimal); // undefined</code></pre>
 			</section>
             <section>
 			  <h3>Arrays of Objects</h3>
 			  <p>Since arrays can hold any data type, they can also hold objects</p>
-				<div data-height="432" data-theme-id="18963" data-slug-hash="0d4160b7cacf56173e50296317c5b871" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var myCats = [
-{name: &#39;Lizzie&#39;,
-age: 18},
-{name: &#39;Daemon&#39;,
-age: 1}
+<pre><code>
+var myCats = [
+  {
+    name: &#39;Lizzie&#39;,
+    age: 18
+  },
+  {
+    name: &#39;Daemon&#39;,
+    age: 1
+  }
 ];
 
 for (var i = 0; i &lt; myCats.length; i++) {
-var myCat = myCats[i];
-var aboutCat = myCat.name + &#39; is &#39; + myCat.age + &#39; years old.&#39;;
-appendResult(&#39;result&#39;, &#39;h2&#39;, aboutCat);
-}</code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/0d4160b7cacf56173e50296317c5b871/'>Class 3 - Slide 6 - Array of Objects</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+  var myCat = myCats[i];
+  var aboutCat = myCat.name + &#39; is &#39; + myCat.age + &#39; years old.&#39;;
+  document.write(aboutCat);
+}
+</code></pre>
 			</section>
             <section>
 			  <h3>Arrays of Objects</h3>
 			  <p>Just like other data types, objects can be passed into functions:</p>
-				<div data-height="443" data-theme-id="18963" data-slug-hash="062420056c46d63ab01b18bfb3c0aab4" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var lizzieTheCat = {
-age: 18,
-furColor: &#39;grey&#39;,
-likes: [&#39;catnip&#39;, &#39;milk&#39;],
-birthday: {month: 7, day: 17, year: 1996}
+<pre><code>
+var lizzieTheCat = {
+  age: 18,
+  furColor: &#39;grey&#39;,
+  likes: [&#39;catnip&#39;, &#39;milk&#39;],
+  birthday: { month: 7, day: 17, year: 1996 }
 }
 
 function describeCat(cat) {
-var description = &#39;This cat is &#39; + cat.age + &#39; years old with &#39; + cat.furColor + &#39; fur.&#39;;
-writeToScreen(&#39;result&#39;, description)
+  var description = &#39;This cat is &#39; + cat.age + &#39; years old with &#39; +
+                    cat.furColor + &#39; fur.&#39;;
+  document.write(description)
 }
 
-describeCat(lizzieTheCat);</code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/062420056c46d63ab01b18bfb3c0aab4/'>Class 3 - Slide 7 - Array of Objects</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+describeCat(lizzieTheCat);
+</code></pre>
 			</section>
             <section>
 				<h3>Let's Develop It</h3>
@@ -167,21 +176,20 @@ describeCat(lizzieTheCat);</code></pre>
             <section>
               <h3>Object methods</h3>
 			  <p>Objects can also hold functions.</p>
-				<div data-height="429" data-theme-id="18963" data-slug-hash="f749182b5fadb32b00a64dbfcaab8b9d" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var lizzieTheCat = {
-age: 18,
-furColor: &#39;grey&#39;,
-meow: function() {
-writeToScreen(&#39;result&#39;, &#39;meowww&#39;);
-},
-eat: function(food) {
-writeToScreen(&#39;opinion&#39;, &#39;Yum, I love &#39; + food);
-},
+<pre><code>
+var lizzieTheCat = {
+  age: 18,
+  furColor: &#39;grey&#39;,
+  meow: function() {
+    document.write(&#39;meowww&#39;);
+  },
+  eat: function(food) {
+    document.write(&#39;Yum, I love &#39; + food);
+  }
 };
 
 lizzieTheCat.meow();
 lizzieTheCat.eat(&#39;brown mushy stuff&#39;);</code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/f749182b5fadb32b00a64dbfcaab8b9d/'>Class 3 - Slide 9 - Object Methods</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
             </section>
             <section>
               <h3>Other JavaScript Objects</h3>
@@ -207,7 +215,7 @@ lizzieTheCat.eat(&#39;brown mushy stuff&#39;);</code></pre>
 			</section>
 
             <section>
-			<h3>IDs vs. Classes</h3>
+			<h3>Refresher: IDs vs. Classes</h3>
 				<div class = "left-align">
 				  <span class = "yellow">ID</span> -- Should only apply to one element on a webpage. For instance, a webpage only has one footer.
 				  <p>The "#" is how you tell CSS "this is an id."</p>
@@ -324,27 +332,27 @@ var specficParagraph = document.getElementsByTagName('p')[2];
               <p>You can access and change attributes of DOM nodes using dot notation.</p>
               <p>To change this element:</p>
               <pre><code>
-&lt;img id="bearPic" src="http://placebear.com/200/300" alt="cat"/&gt;
+&lt;img id="bearPic" src="http://placebear.com/500/500" alt="cat"/&gt;
 			  </code></pre>
               <p>We could change the src attribute this way:</p>
-							<div data-height="150" data-theme-id="18963" data-slug-hash="fefc9eeb9d2418971a4825dcb4bc2cc2" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var imgBear = document.getElementById(&#39;bearPic&#39;);
-var oldSrc = imgBear.src;
-imgBear.src = &#39;http://placebear.com/100/500&#39;;</code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/fefc9eeb9d2418971a4825dcb4bc2cc2/'>Class 3 - Slide 21 - DOM Nodes: Attributes</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<pre><code>
+var imgBear = document.getElementById(&#39;bearPic&#39;);
+imgBear.src = &#39;https://placebear.com/g/200/300&#39;;
+</code></pre>
+            </section>
+            <section>
+              <img id="bearPic" src="http://placebear.com/200/300"/>
             </section>
             <section>
               <h3>DOM Nodes: Getting and Setting Attributes</h3>
               <p>You can also use <code>getAttribute/setAttribute:</code></p>
               <pre><code>
-&lt;img id="bearPic" src="http://placebear.com/200/300" alt="bear"/&gt;
+&lt;img id="bearPic" src="http://placebear.com/500/500" alt="bear"/&gt;
 			  </code></pre>
               <p>We could change the src attribute this way:</p>
-							<div data-height="165" data-theme-id="18963" data-slug-hash="0be80f36c4bcc574d18ed8cf6e9b80a8" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var imgBear = document.getElementById(&#39;bearPic&#39;);
-var oldSrc = imgBear.getAttribute(&#39;src&#39;);
-imgBear.setAttribute(&#39;src&#39;, &#39;http://placebear.com/100/500&#39;);</code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/0be80f36c4bcc574d18ed8cf6e9b80a8/'>Class 3 - Slide 22 - DOM Nodes: Attributes</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<pre><code>
+var imgBear = document.getElementById(&#39;bearPic&#39;);
+imgBear.setAttribute(&#39;src&#39;, &#39;https://placebear.com/g/200/300&#39;);</code></pre>
             </section>
             <section>
               <h3>DOM Nodes: Styles</h3>
@@ -356,14 +364,13 @@ body {
 }
 			  </code></pre>
               <p>Use this JavaScript:</p>
-							<div data-height="114" data-theme-id="18963" data-slug-hash="987d84bac2f6cb9a6c232ecdaa042057" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var pageNode = document.getElementsByTagName(&#39;body&#39;)[0];
+<pre><code>
+var pageNode = document.getElementsByTagName(&#39;body&#39;)[0];
 pageNode.style.color = &#39;red&#39;;</code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/987d84bac2f6cb9a6c232ecdaa042057/'>Class 3 - Slide 23 - DOM Nodes: Styles</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
             </section>
             <section>
               <h3>DOM Nodes: More Styles</h3>
-              <p>Change any CSS property with a "-" to camelCase, and be sure to include a unit on any number</p>
+              <p>When using <code>style</code>, change any CSS property with a "-" to camelCase, and be sure to include a unit on any number</p>
               <p>To make this CSS:</p>
               <pre><code>
 body {
@@ -372,11 +379,10 @@ body {
 }
 			  </code></pre>
               <p>Use this JavaScript:</p>
-							<div data-height="144" data-theme-id="18963" data-slug-hash="d9842230dbb687772a5c3040cb6d7caf" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var pageNode = document.getElementsByTagName(&#39;body&#39;)[0];
+<pre><code>
+var pageNode = document.getElementsByTagName(&#39;body&#39;)[0];
 pageNode.style.backgroundColor = &#39;pink&#39;;
 pageNode.style.paddingTop = &#39;10px&#39;;</code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/d9842230dbb687772a5c3040cb6d7caf/'>Class 3 - Slide 24 - DOM Nodes: More Styles</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
             </section>
             <section>
 				<h3>Let's Develop It</h3>
@@ -386,17 +392,16 @@ pageNode.style.paddingTop = &#39;10px&#39;;</code></pre>
 
             <section>
               <h3>DOM innerHTML</h3>
-              <p>Each DOM node has an <code>innerHTML</code> property with the HTML of all its children. You can use the property to view or change the HTML of a node.</p>
+              <p>Each DOM node has an <code>innerHTML</code> property with the HTML of all its children. You can use the <code>innerHTML</code> property to view or change the HTML of a node.</p>
               <p>For example, you can overwrite the entire body:</p>
-							<div data-height="141" data-theme-id="18963" data-slug-hash="be7ea8c56988dc592fe4648423b780c2" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var pageNode = document.getElementsByTagName(&#39;body&#39;)[0];
-pageNode.innerHTML = &#39;&lt;h1&gt;Oh Noes!&lt;/h1&gt; &lt;p&gt;I just changed the whole page!&lt;/p&gt;&#39;</code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/be7ea8c56988dc592fe4648423b780c2/'>Class 3 - Slide 24 - DOM Nodes: More Styles</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<pre><code>
+var pageNode = document.getElementsByTagName(&#39;body&#39;)[0];
+pageNode.innerHTML = &#39;&lt;h1&gt;Oh Noes!&lt;/h1&gt; &lt;p&gt;I just changed the whole page!&lt;/p&gt;&#39;
+</code></pre>
               <p>Or just add some new content to the end:</p>
-							<div data-height="132" data-theme-id="18963" data-slug-hash="1aab765fb7b7fa7a197de073caf2bd2a" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var pageNode = document.getElementsByTagName(&#39;body&#39;)[0];
+<pre><code>
+var pageNode = document.getElementsByTagName(&#39;body&#39;)[0];
 pageNode.innerHTML += &#39;...just adding this bit at the end of the page.&#39;;</code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/1aab765fb7b7fa7a197de073caf2bd2a/'>Class 3 - Slide 26 - DOM InnerHTML</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
             </section>
             <section>
               <h3>DOM innerHTML continued</h3>
@@ -406,10 +411,9 @@ pageNode.innerHTML += &#39;...just adding this bit at the end of the page.&#39;;
 &lt;p id="warning"&gt;&lt;/p&gt;
 			  </code></pre>
               <p>We can select the node and modify it:</p>
-							<div data-height="112" data-theme-id="18963" data-slug-hash="d64ab8a55b02f4a0ba9ba19da1ef187f" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var warningParagraph = document.getElementById(&#39;warning&#39;);
+<pre><code>
+var warningParagraph = document.getElementById(&#39;warning&#39;);
 warningParagraph.innerHTML = &#39;Danger Will Robinson!&#39;;</code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/d64ab8a55b02f4a0ba9ba19da1ef187f/'>Class 3 - Slide 27 - DOM InnerHTML Continued</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
             </section>
             <section>
               <h3>Creating New Nodes</h3>
@@ -422,19 +426,19 @@ document.appendChild();
             </section>
             <section>
               <h3>Creating New Nodes: Sample Code</h3>
-							<div data-height="375" data-theme-id="18963" data-slug-hash="12bbeb76e48064d8a8ac4deccfe746ba" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code>var pageNode = document.getElementsByTagName(&#39;body&#39;)[0];
-
+<pre><code>
+var pageNode = document.getElementsByTagName(&#39;body&#39;)[0];
 var newImg = document.createElement(&#39;img&#39;);
+
 newImg.src = &#39;http://placebear.com/400/300&#39;;
 newImg.style.border = &#39;1px solid black&#39;;
 pageNode.appendChild(newImg);
 
 var newParagraph = document.createElement(&#39;p&#39;);
 var paragraphText = document.createTextNode(&#39;Squee!&#39;);
+
 newParagraph.appendChild(paragraphText);
 pageNode.appendChild(newParagraph);</code></pre>
-<p>See the Pen <a href='http://codepen.io/danlucas/pen/12bbeb76e48064d8a8ac4deccfe746ba/'>Class 3 - Slide 29 - Creating New Nodes: Sample Code</a> by danlucas (<a href='http://codepen.io/danlucas'>@danlucas</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
             </section>
             <section>
 				<h3>Let's Develop It</h3>
