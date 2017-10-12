@@ -41,15 +41,30 @@
                 <img src="images/gdi_logo_badge.png" alt="GDI logo" style="border: none; background: none; box-shadow: none">
                 <h3>JavaScript for Beginners</h3>
                 <h4>Class 4</h4>
+                <p>Last class!</p>
             </section>
-
-
+            <section>
+                <h3>Today's goals</h3>
+                <ol>
+                    <li>Events</li>
+                    <li>Event Objects</li>
+                    <li>Event Handlers</li>
+                    <li><i>this</i></li>
+                    <li>Forms</li>
+                    <li>Timing functions</li>
+                    <li>Animations</li>
+                </ol>
+            </section>
 			<section>
 				<h3>Events</h3>
 				<p>An 'event' is a type of object that is created when the user interacts with a web page.</p>
                 <p>For example, an event is emitted when a user <em>clicks</em> an element. That event is named "click"</p>
+            </section>
+            <section>
+                <h3>Event handlers</h3>
+                <p>You can add event handlers (also called event listeners) to elements.</p>
+                <p>Event handlers are functions that get called when the event happens.</p>
                 <pre><code class="language-js">
-
 function fireMissiles(event) {
   // code to execute when the click happens
 };
@@ -58,7 +73,7 @@ function fireMissiles(event) {
 element.onclick = fireMissiles;
 
 // second way to add event handler(s)
-element.addEventListener('click', fireMissiles, false);
+element.addEventListener('click', fireMissiles);
 				</code></pre>
 			</section>
             <section>
@@ -82,7 +97,7 @@ element.addEventListener('click', fireMissiles, false);
 			</section>
             <section>
                 <h3>Calling Functions from HTML</h3>
-                <p>As a shortcut, you can call a function directly from your HTML:</p>
+                <p>As a shortcut, you can use the <code>onclick</code> attribute directly on the HTML element:</p>
 <div data-height="146" data-theme-id="18963" data-slug-hash="3385b60fe9d0f16dcac8a3543223f62c" data-default-tab="js" data-user="danlucas" class='codepen'><pre><code class="language-js">
 function sayHi(){
   alert(&#39;Hi!&#39;);
@@ -95,18 +110,6 @@ function sayHi(){
 </div>
             </section>
             <section>
-                <h3>Event Listeners</h3>
-                <p>An event listener is a function that listens for an event. When that event is emitted, the function will be called automatically.</p>
-                <pre><code class="language-js">
-var myButton = document.getElementById('clickMeButton');
-
-myButton.onclick = function sayHi(event){
-  alert('Hi!');
-}
-
-</code></pre>
-			</section>
-            <section>
 				<h3>Let's Develop It</h3>
                 <p>Download <a href="files/class4.zip">this week's sample code</a>.</p>
                 <p>
@@ -114,12 +117,11 @@ myButton.onclick = function sayHi(event){
                   to a placebear image (like https://placebear.com/500/400)
                   (hint: the <code class="language-js">src</code> property holds the url for the image)
                 </p>
-			</section>
-
+            </section>
             <section>
 				<h3>Default Behavior</h3>
-				<p>
-        Certain events (like clicking links) have default behaviors.
+                <p>When an event handler (a function) is called, it receives the <code>event</code> object as the first argument.</p>
+                <p>Certain events (like clicking links) have default behaviors.
         The <code class="language-js">event</code> object has a built-in method to prevent that behavior:</p>
                 <pre><code class="language-js">
 var linkElement = document.getElementById('fakeLink');
@@ -195,7 +197,7 @@ tempForm.onsubmit = function(event) {
                 <pre><code class="language-js">
 
 var scale =
-  document.querySelector('input[name="scale"]:checked').value;
+  document.querySelector('input[name="tempFormat"]:checked').value;
 
 				</code></pre>
 			</section>
@@ -227,12 +229,12 @@ tempForm.addEventListener('submit', logTemperature, false);
             <section>
 				<h3>Timing Functions</h3>
 				<p>In JavaScript, it is possible to execute some code at specified time intervals.</p>
-                <ul>
-                    <li><code class="language-js">setInterval()</code><br><br> executes a function over and over again, at specified time intervals</li>
+                <p>
+                    <code class="language-js">setInterval()</code> executes a given function over and over again, at a specified time interval
                     <br>
-                    <li><code class="language-js">setTimeout()</code> <br><br> executes a function, once, after waiting a specified number of milliseconds</li>
-                </ul>
-			</section>
+                    <code class="language-js">setTimeout()</code> executes a given function, once, after waiting a specified number of milliseconds
+                </p>
+            </section>
             <section>
 				<h3>setInterval</h3>
 				<p>The function signature for <code class="language-js">setInterval</code> is:</p>
@@ -299,7 +301,7 @@ targetPic.onclick = function () {
 }
 
 </code></pre>
-<small><a href='http://codepen.io/danlucas/pen/b784f2e4477781340d1d790fe0ce8d95/'>b784f2e4477781340d1d790fe0ce8d95</a> by danlucas</small>
+<small><a href='http://codepen.io/danlucas/pen/b784f2e4477781340d1d790fe0ce8d95/'>See the codepen</a> by danlucas</small>
 			</section>
             <section>
 				<h3>Let's Develop It</h3>
