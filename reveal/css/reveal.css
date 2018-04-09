@@ -34,6 +34,10 @@ html, body, .reveal div, .reveal span, .reveal applet, .reveal object, .reveal i
 	vertical-align: baseline;
 }
 
+.reveal section li {
+	font-size: 28px;
+}
+
 .reveal article, .reveal aside, .reveal details, .reveal figcaption, .reveal figure,
 .reveal footer, .reveal header, .reveal hgroup, .reveal menu, .reveal nav, .reveal section {
 	display: block;
@@ -74,7 +78,7 @@ body {
     width: 100%;
     bottom: 3px;
     left: 0;
-    z-index: 10; 
+    z-index: 10;
     font-size: 35%;
     text-align:right;
     background-image: url(../css/images/pink-logo.png);
@@ -109,7 +113,7 @@ body {
 
 .reveal h1 { font-size: 3.77em; }
 .reveal h2 { font-size: 2.11em;	}
-.reveal h3 { font-size: 1.55em;	}
+.reveal h3 { font-size: 1.3em;	}
 .reveal h4 { font-size: 1em;	}
 
 
@@ -254,6 +258,7 @@ body {
 .reveal p {
 	margin-bottom: 10px;
 	line-height: 1.2em;
+	font-size: 0.8em;
 }
 
 .reveal q,
@@ -359,8 +364,8 @@ body {
 .reveal .controls div {
 	position: absolute;
 	opacity: 0.1;
-	width: 0; 
-	height: 0; 
+	width: 0;
+	height: 0;
 	border: 12px solid transparent;
 
 	-webkit-transition: opacity 0.2s ease;
@@ -534,7 +539,7 @@ body {
 	width: 80%;
 	height: 60%;
 	left: 50%;
-	top: 50%;
+	top: 42%;
 	margin-top: -320px;
 	padding: 20px 0px;
 	overflow: visible;
@@ -1213,5 +1218,3 @@ body {
 .zoomed .reveal .roll span:after {
 	visibility: hidden;
 }
-
-

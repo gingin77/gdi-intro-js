@@ -79,8 +79,18 @@
 					<li>Write our first JavaScript code and make things happen!</li>
 			</section>
 			<section>
-				<h3>Hello, JavaScript!</h3>
-				<img src="images/oh_hai.jpg" />
+				<h3>Important To-Do's Before We Dive In</h3>
+				<ul>
+					<li>Join the class Slack channel to stay up to speed both during and outside of class</li>
+					<ul>
+						<li>Our channel address: </li>
+					</ul>
+					<li>A text editor: If you don't have one already, use Atom</li>
+					<ul>
+						<li>Go to <a href="https://atom.io/">atom.io</a> to download Atom</li>
+					</ul>
+					<li>*Recommended* Know your browser's Inspector</li>
+				</ul>
 			</section>
 			<section>
 				<h3>It's not Java</h3>
@@ -92,10 +102,29 @@
 				<p>JavaScript is a client-side programming language that adds interactivity to web pages. A browser reads the code and runs it directly.</p>
 			</section>
 			<section>
+				<h3>Cute cartoon playing on differences between Java and JavaScript</h3>
+				<a href="http://leftoversalad.tumblr.com/post/103503118002">Credit: Left Over Salad</a>
+				<img src="images/java_vs_js.png"/>
+			</section>
+			<section>
 				<h3>JavaScript is a client-side language</h3>
 				<img src="images/client-server.jpg" alt="Laptop and server connected via the internet" />
 				<p class="credit">Photo credits: <a href="http://www.flickr.com/photos/papalars/5210226441/" target="_blank">Andrew E. Larson</a> and <a href="http://www.flickr.com/photos/johnseb/3425464/" target="_blank">John Seb Barber</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/"
 					  target="_blank">cc</a></p>
+			</section>
+			<section>
+				<h3>Some HTML code</h3>
+				<pre><code class="language-js">
+					&lt;!DOCTYPE html&gt;
+					&lt;html&gt;
+							&lt;head&gt;
+									&lt;title&gt;Test Page&lt;/title&gt;
+							&lt;/head&gt;
+							&lt;body&gt;
+									&lt;p&gt;Here's some code.&lt;/p&gt;
+							&lt;/body&gt;
+					&lt;/html&gt;
+				</code></pre>
 			</section>
 			<section>
 				<h3>Why JavaScript?</h3>
@@ -108,7 +137,14 @@
 			</section>
 			<section>
 				<h3>Let's Develop It</h3>
-				<p>Let's write your first JavaScript program. Make a folder called GDI. Inside, make a new page called index.html. Place this code inside.</p>
+				<ol>
+					<li>Read the code below</li>
+					<li>Make a folder (aka. "directory") called "gdi_js"</li>
+					<li>Inside, make a new file called index.html</li>
+					<li>Transcribe the code below to index.html</li>
+					<li>Open your index.html file in a browser (ex. Chrome)</li>
+				</ol>
+
 				<pre><code class="language-js">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -125,8 +161,8 @@
 				</code></pre>
 			</section>
 			<section>
-				<h3>Let's Develop It</h3>
-				<p>Once you've copied that code, open index.html. It should open in a browser and run your javascript!</p>
+				<h3>Recap</h3>
+				<p>What did we just do?</p>
 			</section>
 			<section>
 				<h3>Script Tags</h3>
@@ -139,10 +175,40 @@
 			</section>
 			<section>
 				<h3>JavaScript Files</h3>
-				<p>Just like CSS, you can split a long block of JavaScript into its own file and include it with an HTML tag. </p>
+				<p>You can split a long block of JavaScript into its own file and include it with an HTML tag. </p>
 				<pre><code class="language-js">
 &lt;script src="path/to/file.js"&gt;&lt;/script&gt;
 				</code></pre>
+			</section>
+			<section>
+				<h3>How could we modify this code that we have in our index.html file?</h3>
+				<pre><code class="language-js">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+		&lt;head&gt;
+				&lt;title&gt;Test Page&lt;/title&gt;
+		&lt;/head&gt;
+		&lt;body&gt;
+		&lt;p&gt;This is my awesome JavaScript code.&lt;/p&gt;
+				&lt;script&gt;
+						alert('Hello World!');
+				&lt;/script&gt;
+		&lt;/body&gt;
+&lt;/html&gt;
+				</code></pre>
+			</section>
+			<section>
+				<h3>3 ways to access the Inspector and Console from Google Chrome</h3>
+				<ol>
+					<li>Right click, then choose "Inspect"</li>
+					<li>click: "option" + "command" + "i"</li>
+					<li>Find inspector in the menu</li>
+					<ol>
+						<li>On a Mac, go to the "View" menu</li>
+						<li>Find "Developer" in dropdown</li>
+						<li>Choose "Developer Tools"</li>
+					</ol>
+				</ol>
 			</section>
 			<section>
 				<h3>Some JavaScript things</h3>
@@ -150,7 +216,7 @@
 			</section>
 			<section>
 				<h3>Separating Instructions</h3>
-				<p>After each individual statement, it is reccomended (but not necessary!) add a semicolon.</p>
+				<p>After each individual statement, it is reccomended (but not necessary!) to add a semicolon.</p>
 				<pre><code class="language-js">
     console.log('Hello World!');
     console.log('I am glad to meet you');
@@ -160,10 +226,25 @@
 			<section>
 				<h3>Comments</h3>
 				<p>You can leave comments in your code. Comments are notes that people can read and computers will ignore.</p>
+				<ul>
+					<li>Forward slash, star:</li>
+					<ul>
+						<p>
+							/* some JS code */
+						</p>
+					</ul>
+					<li>Double forward slash at the end of a line:</li>
+					<ul>
+						<p>
+							('some JS code');// ......
+						</p>
+					</ul>
+				</ul>
 				<pre><code class="language-js">
-    /*I can wrap long comments
+    /* I can wrap long comments
     with multiple lines
-    like this*/
+    like this */
+
     console.log('Hello World!'); //Or mark short comments like this
 				</code></pre>
 			</section>
@@ -184,11 +265,36 @@ document.write('Hello World!');
 			</section>
 			<section>
 				<h3>Let's Develop It</h3>
-				<ul>
-					<li>Open index.html. Add a comment to the code.</li>
-					<li>Try different ways of printing your message.</li>
-					<li>Create a new file called mycode.js. Move your code to this file and link it to your page.</li>
-				</ul>
+				<p>
+					While following the steps below, keep moving between your text editor and the browser, so you can see what's happening.
+				</p>
+				<ol>
+					<li>Open index.html</li>
+					<li>Try different ways of printing your message. </li>
+					<ul>
+						<li>
+							To the webpage
+						</li>
+						<li>
+							As a pop-up box
+						</li>
+						<li>
+							To the browser's console
+						</li>
+					</ul>
+					<li>Add comments to indicate how each type of JS code behaves</li>
+					<li>Create a new file called mycode.js</li>
+					<li>Move all of your JS code from index.html to mycode.js</li>
+					<ul>
+						<li>
+							When you look in your browser, the JS code should NOT be working at this point
+						</li>
+					</ul>
+					<li>Add code to index.hmtl to connect it to mycode.js</li>
+					<li>
+						Now, when you look in your browser, the JS code should be working
+					</li>
+				</ol>
 			</section>
 
 			<section>
@@ -224,6 +330,9 @@ var numberOfKittens;
 				<pre><code class="language-js">
 var numberOfKittens = 5;
 				</code></pre>
+				<p>
+					*** Alternative, but not completely equivalent ways of declaring variables use "let" and "const" instead of "var". For more info, checkout this <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let">page on MDN</a>. ***
+				</p>
 			</section>
 			<section>
 				<h3>Using a Variable</h3>
