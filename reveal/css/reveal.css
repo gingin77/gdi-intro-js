@@ -318,6 +318,11 @@ body {
 	max-height: 400px;
 }
 
+#squeeze {
+	margin: -15px 15px auto;
+	padding: 0px
+}
+
 .reveal table th,
 .reveal table td {
 	text-align: left;
