@@ -51,8 +51,8 @@
 									<li>Template literals</li>
 									<li>Cover functions in more depth</li>
 									<li>Meet the DOM, aka the Document Object Model</li>
-									<!-- <li>Learn about scope</li>
-									<li>What are booleans?</li>
+									<li>Learn about scope</li>
+									<!-- <li>What are booleans?</li>
 									<li>Comparison and logical operators!</li>
 									<li>if / else / else if statements</li>
 									<li>while and for loops</li>
@@ -67,15 +67,22 @@
 							</ul>
 						</section>
 						<section>
-							<h3>Let's Develop It</h3>
+							<p style="margin-top:200px;">
+
+							</p>
+							<h3>Short Live Coding Demo to Review Variable Setting and Document.Write</h3>
+						</section>
+						<section>
+							<h3>Let's Develop in the Console</h3>
 							<ol>
+								<li>Open the console in any page of your browser</li>
 								<li>Create two variables, using whatever variable names make the most sense to you. The variables should define:</li>
 									<ul>
 										<li>A first name</li>
 										<li>A last name</li>
 									</ul>
 								<li>Combine the variables together to make a full name</li>
-								<li>Print the entire name to the console, your webpage or an alert</li>
+								<li>Print the entire name to an alert</li>
 							</ol>
 							<p></p>
 							<p>If you need a refresher, click <a href="https://gingin77.github.io/gdi-intro-js/class1.html#/">here for Monday's slides</a></p>
@@ -192,7 +199,7 @@ logTurtleFact();
 						<section>
 							<h3>Let's Develop It</h3>
 							<p>Turn the code you wrote to output someone's full name into a function. The function should accept 2 arguments: the first name, and the last name.</p>
-							<p>Don't forget to call the function with your own name!</p>
+
 						</section>
 						<section>
 							<h3>Returning Values</h3>
@@ -250,7 +257,7 @@ var receipt  = 'Meal: ' + billPreTip + ' Tip: ' + billTip + ' Total: ' + (billPr
 									<section>
 						<h3>Refresher/Essential CSS Knowledge for Understanding the DOM: IDs vs. Classes</h3>
 							<div class = "left-align">
-								<span class = "yellow">ID</span> -- Should only apply to one element on a webpage. For instance, a webpage only has one footer.
+								<span class = "yellow">ID</span> -- *Should* only apply to one element on a webpage. For instance, a webpage only has one footer.
 								<p>The "#" is how you tell CSS "this is an id."</p>
 							</div>
 							<div class = "left-align">
@@ -261,9 +268,12 @@ var receipt  = 'Meal: ' + billPreTip + ' Tip: ' + billTip + ' Total: ' + (billPr
 						<section>
 							<h3>The DOM Tree</h3>
 							<p>We model the nested structure of an HTML page with the DOM (Document Object Model) Tree. The browser makes a "map" of all the elements on a page.</p>
+							<p>
+								* We'll use some diagrams to develop a commmon mental model, you won't encounter a visual version of this map *
+							</p>
 						</section>
 						<section>
-							<h3>The DOM: Sample Code</h3>
+							<h3>Some sample code that gets translated into the DOM</h3>
 								<pre><code>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -309,6 +319,9 @@ document.getElementById(id);
 							<pre><code>
 var imgKitten = document.getElementById('bearPic');
 				</code></pre>
+				<p>
+					Let's go back to the picture of Eleven that we were looking at earlier. 
+				</p>
 						</section>
 
             <section>
