@@ -41,17 +41,436 @@
                 <h3>JavaScript for Beginners</h3>
                 <h4>Class 3</h4>
             </section>
-            <section>
-                <h3>Today's goals</h3>
-                    <ol>
-                     <li>Objects</li>
-                     <li>Review: Anatomy of a website</li>
-                     <li>Accessing the DOM with JavaScript!</li>
-                     <li>Syling with JavaScript!</li>
-                     <li>DOM innerHTML</li>
-                     <li>Creating new nodes</li>
-            </section>
-            <section>
+						<section>
+								<h3>Review</h3>
+								<p>In this code, spot the comments, variables, operator, function, argument, and return value.</p>
+								<pre style="width:1100px;">
+									<code class="language-js">
+function calculateTip(total) {
+	var tipPercent = 0.15; //Can be changed
+	return (total * tipPercent);
+}
+
+var billPreTip = 10;
+var billTip  = calculateTip(billPreTip);
+var receipt  = 'Meal: ' + billPreTip + ' Tip: ' + billTip + ' Total: ' + (billPreTip + billTip);
+								</code></pre>
+								<pre style="width:1100px;">
+									<code class="language-js">
+// I've plugged in the argument values below
+function calculateTip('10') {
+	var tipPercent = 0.15
+	return ('10' * '0.15');
+}
+									</code>
+								</pre>
+						</section>
+						<section>
+								<h3>Scope</h3>
+								<p>Scope is the concept of what's visible and invisible at certain parts of the program—what the program can see and has access to (variables, functions). It's all about visibility. </p>
+						</section>
+						<section>
+								<h3>Global Scope</h3>
+								<p>Things that are visible <em>everywhere</em> in the program are said to live in the "Global Scope"</p>
+								<iframe height='247' scrolling='no' src='https://codepen.io/jbielick/embed/oLEpJV/?height=247&theme-id=dark&default-tab=js&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/jbielick/pen/oLEpJV/'>oLEpJV</a> by Josh Bielick (<a href='http://codepen.io/jbielick'>@jbielick</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+						</section>
+						<section>
+								<h3>Local Scope</h3>
+								<p>A variable declared inside of a function has a <span class="yellow">local</span> scope and can only be seen within that function.</p>
+								<iframe height='342' scrolling='no' src='https://codepen.io/jbielick/embed/qNxpvL/?height=342&theme-id=dark&default-tab=js&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/jbielick/pen/qNxpvL/'>qNxpvL</a> by Josh Bielick (<a href='http://codepen.io/jbielick'>@jbielick</a>) on <a href='http://codepen.io'>CodePen</a>.</iframe>
+						</section>
+
+						<section>
+								<h3>Boolean Variables</h3>
+								<p>Boolean variables represent the logical values True and False</p>
+								<pre><code class="language-js">
+		var customerHasPaid = true;
+		var showVideo = false;
+				</code></pre>
+								<p>If you try to use another variable as a boolean, JavaScript will guess. The number 0, the empty string '  ', undefined, and null are considered false, everything else is "truthy".</p>
+						</section>
+
+						<section>
+								<h3>The if statement</h3>
+								<p>Use 'if' to decide which lines of code to execute, based on a condition.</p>
+								<pre style="width:1000px;">
+									<code class="language-js">
+// Descriptive function
+if (expression) {
+if the argument passed in for 'expression' is truthy, the
+code inside these brackets will run!
+}
+				</code>
+			</pre>
+			<pre style="width:1000px;">
+				<code class="language-js">
+var accountBalance = 7800;
+
+if (accountBalance > 0) {
+	document.write('Your current balance is: $' + accountBalance / 100);
+}
+				</code></pre>
+						</section>
+						<section>
+				<h3>Comparison Operators</h3>
+				<h5><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness"</h5>Use this page as a reference for equal vs identical</a></h5>
+								<table class="smalltext">
+										<thead>
+											<tr>
+												<th width="150px">Example</th>
+												<th width="250px">Name</th>
+												<th>Result</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+											 <td>a == b</td>
+											 <td>Equal</td>
+											 <td><strong><code>TRUE</code></strong> if a is equal to b (can be different types).</td>
+											</tr>
+											<tr>
+											 <td>a === b</td>
+											 <td>Identical</td>
+											 <td>
+												<strong><code>TRUE</code></strong> if a is equal to b, and the same type. </td>
+											</tr>
+											<tr>
+											 <td>a != b</td>
+											 <td>Not equal</td>
+											 <td><strong><code>TRUE</code></strong> if a is not equal to b (can be different types).</td>
+											</tr>
+											<tr>
+											 <td>a !== b</td>
+											 <td>Not identical</td>
+											 <td>
+												<strong><code>TRUE</code></strong> if a is not equal to b, or they are not the same type.</td>
+											</tr>
+											<tr>
+											 <td>a &lt; b</td>
+											 <td>Less than</td>
+											 <td><strong><code>TRUE</code></strong> if a is strictly less than b.</td>
+											</tr>
+											<tr>
+											 <td>a &gt; b</td>
+											 <td>Greater than</td>
+											 <td><strong><code>TRUE</code></strong> if a is strictly greater than b.</td>
+											</tr>
+											<tr>
+											 <td>a &lt;= b</td>
+											 <td>Less than or equal to </td>
+											 <td><strong><code>TRUE</code></strong> if a is less than or equal to b.</td>
+											</tr>
+											<tr>
+											 <td>a &gt;= b</td>
+											 <td>Greater than or equal to </td>
+											 <td><strong><code>TRUE</code></strong> if a is greater than or equal to b.</td>
+											</tr>
+										</tbody>
+								</table>
+			</section>
+						<section>
+								<h3>Watch out!</h3>
+								<p>Don't mix up = and ==</p>
+								<p>
+									A single equal sign serves as an assignment operator, ie for defining variables
+								</p>
+								<p>
+									A double equal sign is used to compare if 2 things are equivalent
+								</p>
+								<p>
+									A helpful way to distinguish the two might be thinking of single "=" as a making a statement vs the double "==" as asking a question.
+								</p>
+						</section>
+						<section>
+				<h3>Let's Develop It</h3>
+								<p>Make a variable called "temperature". Write some code that tells you to put on a coat if it is below 50 degrees.</p>
+			</section>
+
+			<section>
+				<h3>The if/else statement</h3>
+				<p>Use else to provide an alternate set of instructions.</p>
+				<p>
+					To see how this code runs, copy it over to the console.
+				</p>
+				<p>
+					You'll need to copy the 'age' assignment line first, hit enter, and then copy over the entire if/else statement.
+				</p>
+				<pre style="width:1000px;"><code class="language-js">
+var age = prompt('What is your age?');
+
+if (age >= 16) {
+	alert('Yay, you can drive!');
+} else {
+	alert('Sorry, but you have ' + (16 - age) + ' years until you can drive.');
+}
+				</code></pre>
+						</section>
+						<section>
+								<h3>The if/else if/else statement</h3>
+								<p>If you have multiple conditions, you can use else if.</p>
+								<pre style="width:1000px;"><code class="language-js">
+var age = 20;
+
+if (age >= 35) {
+	alert('You can vote AND hold any place in government!');
+} else if (age >= 25) {
+	 alert('You can vote AND run for the Senate!');
+} else if (age >= 18) {
+	 alert('You can vote!');
+} else {
+	 alert('You can\'t vote, but you can still write your representatives.');
+}
+				</code></pre>
+						</section>
+						 <section>
+				<h3>Let's Develop It</h3>
+								<p>Modify your "wear a coat" code for these conditions:</p>
+								<ol>
+										<li>If it is less than 50 degrees, wear a coat.</li>
+										<li>If it is less than 30 degrees, wear a coat and a hat.</li>
+										<li>If it is less than 0 degrees, stay inside.</li>
+										<li>Otherwise, wear whatever you want.</li>
+								</ol>
+			</section>
+						<section>
+				<h3>Logical Operators</h3>
+								<table>
+										<thead>
+											<tr>
+												<th width="200px">Example</th>
+												<th width="150px">Name</th>
+												<th>Result</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+											 <td>a &amp;&amp; b</td>
+											 <td>And</td>
+											 <td><strong><code>TRUE</code></strong> if both a and b are <strong><code>TRUE</code></strong>.</td>
+											</tr>
+											<tr>
+											<td>a || b</td>
+											 <td>Or</td>
+											 <td><strong><code>TRUE</code></strong> if either a or b is <strong><code>TRUE</code></strong>.</td>
+											</tr>
+											<tr>
+											 <td>! a</td>
+											 <td>Not</td>
+											 <td><strong><code>TRUE</code></strong> if a is not <strong><code>TRUE</code></strong>.</td>
+											</tr>
+										 </tbody>
+								</table>
+			</section>
+						<section>
+								<h3>Using logical operators</h3>
+								<p>You can use these operators to combine conditions.</p>
+
+								<pre style="width:1000px;"><code class="language-js">
+var amountDue = 12000;
+
+if (amountDue > 0 && amountDue <= 10000) {
+	alert('You owe ' + amountDue);
+} else {
+	alert('Your account is delinquent. Please pay $' + amountDue / 100);
+}
+				</code></pre>
+						</section>
+						<section>
+				<h3>Let's Develop It</h3>
+								<p>Refactor (update your code) to add a logical operator to your what to wear program.</p>
+								<h3> SKIP </h3>
+			</section>
+
+						<section>
+								<h3>While loops</h3>
+								<p>The <em>while</em> loop will repeat the same code over and over until a predefined condition is satisfied.</p>
+
+								<pre style="width:1000px;"><code class="language-js">
+var beersLeft = 99;
+
+while (beersLeft > 1) {
+	alert(beersLeft + ' bottles of beer on the wall');
+	beersLeft -= 1;
+}
+				</code></pre>
+						</section>
+						<section>
+				<h3>Infinite Loops</h3>
+								<p>Make sure something changes in the loop, or your loop will go on forever...</p>
+							 <img src="images/infinite_loop.gif" style="height: 400px;"/>
+			</section>
+						<section>
+								<h3>For loops</h3>
+								<p>For loops are very similar, but you declare a counter in the statement.</p>
+<pre><code class="language-js">
+		//will count 1 to 10
+		for (var i = 1; i <= 10; i++) {
+		console.log(i);
+		}
+</code></pre>
+						</section>
+						<section>
+								<h3>Loops and logic</h3>
+								<p>You can add other statements or logical operators inside the loops.</p>
+<pre><code class="language-js">
+//Count from 1 to 50
+for (var i = 1; i <= 50; i++) {
+	console.log(i);
+
+	// say "fizz" if i is a multiple of three
+	if (i % 3 === 0) {
+	console.log(' fizz');
+	}
+
+	// say "buzz" if i is a multiple of three
+	if (i % 5 === 0) {
+	console.log(' buzz');
+	}
+
+	console.log( "FizzBuzz" );
+}
+</code></pre>
+						</section>
+						<section>
+								<h3>Break</h3>
+								<p>To exit a loop, use the break statement.</p>
+								<div data-height="376" data-theme-id="18963" data-slug-hash="b04d334b175ef98bc015a10cd3588671" data-default-tab="js" data-user="danlucas" class='codepen'>
+									<pre style="width:1000px;">
+										<code class="language-js">
+// count from 100 to 200
+for (var i = 100; i <= 200; i++) {
+
+	console.log('good so far: ' + i);
+
+	// stop at the first multiple of 7
+	if (i % 7 == 0) {
+		console.log('Found a multiple of 7! - ' + i);
+		break;
+	}
+}
+</code></pre>
+						</section>
+						<section>
+				<h3>Let's Develop It</h3>
+								<p>Write a loop that gives you the 9's times table,<br /> from 9 x 1 = 9 to 9 x 12 = 108.</p>
+								<p>Finish early? Try using a loop inside a loop to write all the times tables, from 1 to 12.</p>
+								<h3>SKIP</h3>
+			</section>
+
+						<section>
+								<h3>Arrays</h3>
+								<p>Arrays are lists of things. They also keep track of the order of the list.</p>
+								<pre><code class="language-js">
+var todoList = ['eat breakfast', 'go for a walk', ...];
+				</code></pre>
+								<p>You can put different types of data into an array.</p>
+								<pre><code class="language-js">
+var colorOptions = ['Red', 'Orange', 'Yellow'];
+var lotteryNumbers = [33, 72, 64, 18, 17, 85];
+var myFavoriteThings = ['Broccoli', 1024, 'Sherlock'];
+
+// whoa! a list of lists! inception.
+var myTodoLists = [
+	['eat breakfast', 'go to work'],
+	['pay bills', 'wine tasting']
+];
+				</code></pre>
+						</section>
+						<section>
+								<h3>Array Length</h3>
+								<p>The length property tells you how many items are in an array</p>
+								<pre><code class="language-js">
+var tags = ['#javascript', '#hacker', '#gdirdu'];
+console.log(tags.length); // 3
+
+</code></pre>
+						</section>
+						<section>
+								<h3>Using Arrays</h3>
+								<p>
+									Arrays are zero-indexed, meaning the first position is known as position 0. The last position will always be the array length minus one.
+								</p>
+								<p>You can access items with "bracket notation" by using the position of the item you want.</p>
+								<pre style="width:1000px;"><code class="language-js">
+var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet'];
+var firstColor = rainbowColors[0];
+var lastColor = rainbowColors[6];
+
+console.log(firstColor, lastColor);
+
+</code></pre>
+						</section>
+						<section>
+								<h3>Changing arrays</h3>
+								<p>You can use bracket notation to change an item in an array</p>
+								<pre><code class="language-js">
+
+var myFavoriteThings = ['Broccoli', 1024, 'Sherlock'];
+
+function logFirstFavorite() {
+	console.log(myFavoriteThings[0]);
+}
+
+logFirstFavorite();
+
+myFavoriteThings[0] = 'Garlic Roasted Brussel Sprouts';
+
+logFirstFavorite(); // 'Garlic Roasted Brussel Sprouts'
+
+</code></pre>
+						</section>
+						<section>
+								<h3>Expanding arrays</h3>
+								<p>Arrays do not have a fixed length. You can use "push" to add something to an array.</p>
+								<pre><code class="language-js">
+var myFavoriteThings = ['Broccoli', 1024, 'Sherlock'];
+myFavoriteThings.push('Dancing');
+
+console.log(myFavoriteThings);
+								</code></pre>
+						</section>
+						<section>
+				<h3>Let's Develop It</h3>
+								<p>Create an array of your favorite foods. Put a few values onto your screen.</p>
+								<p>Some things to try:
+									<ul>
+										<li>Log the second item in your array to the console.</li>
+										<li>Find the length of your array.</li>
+										<li>Add new items to your array.</li>
+									</ul>
+			</section>
+
+						<section>
+								<h3>Iterating through arrays</h3>
+								<p>Use a for loop to easily do something with each item in an array.</p>
+								<div data-height="263" data-theme-id="18963" data-slug-hash="8fe1917dae0ec0ea7134930d4ebd2855" data-default-tab="js" data-user="danlucas" class='codepen'>
+								<pre style="width:1000px;"><code class="language-js">
+var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet'];
+
+// loop as many times as items we have
+for (var i = 0; i < rainbowColors.length; i++) {
+
+	// each time this runs, i will be 1 number higher and
+	// effectively "walk" up our array
+
+	console.log(rainbowColors[i]);
+}
+
+</code></pre>
+						</section>
+						<section>
+				<h3>Let's Develop It</h3>
+				<p>Use a loop to make a list of all your favorite foods.</p>
+			</section>
+
+			<section>
+				<h3>Resources</h3>
+					<ul>
+						<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank">JavaScript Guide</a>, from the Mozilla Developers Network.</li>
+						<li><a href="http://www.codecademy.com/tracks/javascript" target="_blank">Codecademy</a>, with interactive JavaScript lessons to help you review.</li>
+					</ul>
+			</section>
+      <section>
 			  <h3>Objects</h3>
 			  <p>Objects let us store a collection of properties.</p>
               <pre><code>
@@ -61,12 +480,11 @@ var objectName = {
   ...
 };
 			  </code></pre>
-              <pre><code>
+        <pre><code>
 var aboutMe = {
-  hometown: 'Blacksburg, VA',
-  hair: 'Brown',
-  likes: ['dogs', 'code'],
-  birthday: {month: 3, day: 17}
+	hair: "brown",
+  eye_color: 'blue',
+	likes: ['dogs', 'coding', 'mint chocolate chip ice cream']
 };
 			  </code></pre>
 			</section>
@@ -75,25 +493,23 @@ var aboutMe = {
 			  <p>You can retrieve values using "dot notation"</p>
 <pre><code>
 var aboutMe = {
-  hometown: &#39;Blacksburg, VA&#39;,
-  hair: &#39;Brown&#39;
+	hair: "brown",
+  eye_color: 'blue',
+  likes: ['dogs', 'coding', 'mint chocolate chip ice cream']
 };
-var myHometown = aboutMe.hometown;
+var myEyeColor = aboutMe.eye_color;
 
-document.write(myHometown);
+alert(myEyeColor);
 </code></pre>
-			</section>
-			<section>
-	<h3>Accessing Objects</h3>
-	<p>Or using "bracket notation" (like arrays)</p>
+<p>Or by using "bracket notation" (like arrays)</p>
 <pre><code>
-var aboutMe = {
-  hometown: &#39;Blacksburg, VA&#39;,
-  hair: &#39;Brown&#39;
-};
-var myHair = aboutMe[&#39;hair&#39;];
+	var myHairColor = aboutMe["hair"]
+</code></pre>
 
-document.write(myHair);
+<p>Or by combining dot notation and bracket notation together to access an item in an array in an object</p>
+<pre><code>
+var anotherFavoriteThing = aboutMe.likes[2]
+var aFavoriteThing = aboutMe["likes"][1]
 </code></pre>
 </section>
 <section>
@@ -101,18 +517,19 @@ document.write(myHair);
 			  <p>You can use dot or bracket notation to change properties</p>
 <pre><code>
 var aboutMe = {
-  hometown: &#39;Blacksburg, VA&#39;,
-  hair: &#39;Brown&#39;
+  hometown: &#39;Charlotte, NC&#39;,
+  hair: &#39;blonde&#39;
 };
 
 aboutMe.hometown = &#39;Durham, NC&#39;;
-aboutMe['hair'] = &#39;blue&#39;;
+aboutMe['hair'] = &#39;brown&#39;;
 
 console.log(aboutMe.hometown); // Durham, NC
-console.log(aboutMe.hair); // blue
+console.log(aboutMe.hair); // brown
 </code></pre>
 			</section>
 			<section>
+				<h3 style="color: #01a9b4;">SKIP</h3>
 					<h3>Changing Objects</h3>
           <p>Add new properties</p>
 <pre><code>
@@ -125,6 +542,7 @@ delete aboutMe.favoriteAnimal;
 console.log(aboutMe.favoriteAnimal); // undefined</code></pre>
 			</section>
             <section>
+							<h3 style="color: #01a9b4;">SKIP</h3>
 			  <h3>Arrays of Objects</h3>
 			  <p>Since arrays can hold any data type, they can also hold objects</p>
 <pre><code>
@@ -147,6 +565,7 @@ for (var i = 0; i &lt; myCats.length; i++) {
 </code></pre>
 			</section>
             <section>
+							<h3 style="color: #01a9b4;">SKIP</h3>
 			  <h3>Arrays of Objects</h3>
 			  <p>Just like other data types, objects can be passed into functions:</p>
 <pre><code>
@@ -167,6 +586,7 @@ describeCat(lizzieTheCat);
 </code></pre>
 			</section>
             <section>
+							<h3 style="color: #01a9b4;">SKIP</h3>
 				<h3>Let's Develop It</h3>
                 <p>Create an object to hold information on your favorite recipe. It should have properties for recipeTitle (a string), servings (a number), and ingredients (an array of strings).</p>
                 <p>Try displaying some information about your recipe.</p>
@@ -174,7 +594,7 @@ describeCat(lizzieTheCat);
 			</section>
 
             <section>
-              <h3>Object methods</h3>
+              <h3 style="color: #01a9b4;">SKIP</h3>
 			  <p>Objects can also hold functions.</p>
 <pre><code>
 var lizzieTheCat = {
@@ -205,7 +625,7 @@ lizzieTheCat.eat(&#39;brown mushy stuff&#39;);</code></pre>
               </ul>
             </section>
 
-			<!-- <section>
+			<section>
 			  <h3>Review: Anatomy of a website</h3>
 			  <div class = "blue"> Your Content</div>
 			  <div><span class = "blue">+ HTML: </span>Structure</div>
@@ -214,7 +634,7 @@ lizzieTheCat.eat(&#39;brown mushy stuff&#39;);</code></pre>
 			  <p>A website is a way to present your content to the world, using HTML and CSS to present that content &amp; make it look good.</p>
 			</section>
 
-            <section>
+      <section>
 			<h3>Refresher: IDs vs. Classes</h3>
 				<div class = "left-align">
 				  <span class = "yellow">ID</span> -- Should only apply to one element on a webpage. For instance, a webpage only has one footer.
@@ -225,9 +645,7 @@ lizzieTheCat.eat(&#39;brown mushy stuff&#39;);</code></pre>
 				  <p>The "." is how you tell CSS "this is a class name."</p>
 				</div>
 			</section>
-
-
-            <section>
+			<section>
               <h3>The DOM Tree</h3>
               <p>We model the nested structure of an HTML page with the DOM (Document Object Model) Tree. The browser makes a "map" of all the elements on a page.</p>
             </section>
@@ -256,9 +674,6 @@ lizzieTheCat.eat(&#39;brown mushy stuff&#39;);</code></pre>
               <h3>The DOM: Sample Model</h3>
               <img src="images/dom-tree.png" alt="Simple DOM Tree"/>
             </section>
-
-        <!--Accessing the DOM-->
-
             <section>
               <h3>DOM Access</h3>
               <p>Your browser automatically builds a Document Object to store the DOM of a page. To change a page:</p>
@@ -281,7 +696,7 @@ document.getElementById(id);
               <pre><code>
 var imgKitten = document.getElementById('bearPic');
 			  </code></pre>
-            </section> -->
+            </section>
             <section>
               <h3>DOM Access: By Tag Name</h3>
               <p>You can find certain types of HTML elements using this method:</p>
